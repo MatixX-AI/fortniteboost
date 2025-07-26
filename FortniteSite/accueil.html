@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FortniteBoost - Astuces & Guides Fortnite</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background: #1e1e2f;
+      color: white;
+      margin: 0;
+      padding: 20px;
+    }
+    header {
+      background: #20232a;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      color: #61dafb;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #ccc;
+    }
+    section {
+      padding: 30px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .guide {
+      background: #161b22;
+      margin-bottom: 20px;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .guide h2 {
+      margin-top: 0;
+      color: #58a6ff;
+    }
+    .menu-pioches a:hover {
+      background: #0f73ff;
+      color: #fff;
+      box-shadow: 0 0 12px 2px #0f73ff, 0 0 4px #0f73ff;
+      text-shadow: 0 0 8px #0f73ff;
+      z-index: 20;
+    }
+    .menu-pioches {
+      transition:all 0.18s;
+    }
+    .menu-pioches.show {
+      display:block !important;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #aaa;
+      background: #20232a;
+    }
+    .btn {
+      background: none;
+      color: #61dafb;
+      padding: 0 8px;
+      border: none;
+      border-radius: 0;
+      cursor: pointer;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: none;
+      transition: color 0.2s;
+      outline: none;
+      display: inline-block;
+    }
+    .btn:hover, .btn:focus {
+      color: #fff;
+      text-shadow: 0 0 8px #0f73ff;
+    }
+    @media (max-width: 768px) {
+      .guide {
+        flex-direction: column !important;
+        gap: 20px !important;
+      }
+
+      .guide iframe {
+        height: 180px !important;
+      }
+
+      nav {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+      }
+
+      nav .btn {
+        margin: 6px 4px !important;
+      }
+
+      header h1 {
+        font-size: 1.8rem !important;
+      }
+
+      header p {
+        font-size: 1rem !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header style="padding: 20px; background: #20232a; box-shadow: 0 0 15px 4px #0f73ff;">
+    <div style="display: flex; align-items: center; justify-content: center; gap: 28px; max-width: 900px; margin: 0 auto;">
+      <img src="Images/Logo.png.png" style="width: 90px; height: auto; display: block; margin-bottom: 0;">
+      <div style="flex:1; display: flex; flex-direction: column; align-items: center;">
+        <h1 style="margin: 0; font-size: 2.5rem; color: #61dafb;">FortniteBoost</h1>
+        <p style="text-align:center; font-size:1.15rem; margin-top:8px; margin-bottom:18px; color:#aaa; font-weight:bold; max-width: 600px;">
+          Progresse sur Fortnite avec des astuces et outils pros :<br>
+          🎯 Guides d'entraînement & conseils stratégiques<br>
+          🗺️ Carte Fortnite du chapitre<br>
+          ❓ Quiz fun pour tester tes connaissances<br>
+          🔍 Trouve ton pseudo tryhard<br>
+          🛠️ Réglages et équipements des meilleurs joueurs<br>
+          <span style="color:#0f73ff; font-weight:bold;">Tout pour gagner plus de games et t'améliorer rapidement !</span>
+        </p>
+      </div>
+    </div>
+  </header>
+
+   <!-- Menu simple -->
+  <nav style="text-align:center; background:#20232a; padding: 10px 0;">
+    <a href="accueil.html" class="btn" style="margin: 0 8px;">Accueil</a>
+    <a href="equipement.html" class="btn" style="margin: 0 8px;">Equipement pro Fortnite</a>
+    <a href="map.html" class="btn" style="margin: 0 8px;">Carte Fortnite</a>
+    <div style="display:inline-block; position:relative;">
+      <button class="btn" style="margin:0 8px; font-size:1rem; padding:8px 18px;">Top 10 ▼</button>
+      <div style="display:none; position:absolute; left:0; top:100%; background:#20232a; min-width:180px; box-shadow:0 2px 8px rgba(0,0,0,0.12); border-radius:8px; z-index:10; text-align:left;" class="menu-pioches">
+        <a href="pioche.html" class="btn" style="display:block; margin:6px 0; padding:10px 18px; text-align:left;">Pioches</a>
+        <a href="sac_a_dos.html" class="btn" style="display:block; margin:6px 0; padding:10px 18px; text-align:left;">Sac à dos</a>
+        <a href="planeur.html" class="btn" style="display:block; margin:6px 0; padding:10px 18px; text-align:left;">Planeur</a>
+        <a href="skin.html" class="btn" style="display:block; margin:6px 0; padding:10px 18px; text-align:left;">Skin</a>
+        <a href="danse.html" class="btn" style="display:block; margin:6px 0; padding:10px 18px; text-align:left;">Danses</a>
+      </div>
+    </div>
+    <a href="quiz.html" class="btn" style="margin: 0 8px;">Quiz</a>
+    <a href="pseudo.html" style="color:#61dafb; margin: 0 15px; text-decoration:none; font-weight:bold;">Pseudo</a>
+    <a href="mention.html" class="btn" style="margin: 0 8px;">Mentions légales et confidentialité</a>
+  </nav>
+  
+
+  <section>
+    <div class="guide" style="display:flex; align-items:flex-start; gap:32px;">
+      <div style="flex:1; min-width:220px;">
+        <h2>📌 Top 3 maps pour s'entraîner en build</h2>
+        <p>Voici les meilleurs codes créateurs pour t'améliorer rapidement :<br>
+        1. Raider464's Edit Map - Code : 2424-4344-7824<br>
+        2. Piece Control Map - Code : 6818-9760-6633<br>
+        3. Aim Training - Code : 3029-7883-3701</p>
+      </div>
+      <div style="flex:0 0 380px; max-width:380px; display:flex; flex-direction:column; align-items:center;">
+        <iframe width="100%" height="200" src="https://www.youtube.com/embed/gZ17va8e-X4" title="Raider464 Edit Map" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius:8px;"></iframe>@Pentah
+        <a href="map_entrainement.html" target="_self" class="btn" style="margin-top:14px; width:90%; text-align:center;">En savoir plus</a>
+        </a>
+      </div>
+    </div>
+
+    <div class="guide" style="display:flex; align-items:flex-start; gap:32px;">
+      <div style="flex:1; min-width:220px;">
+        <h2>⚙️ Réglages pro recommandés pour Clavier souris</h2>
+        <p>Optimise ton gameplay avec ces réglages :<br>
+        - Sensibilité souris : 8.0% (Axe X) / 8.0% (Axe Y)<br>
+        - DPI : 800<br>
+        - Sensibilité(visée) : 26%<br>
+        -Sensibilité(lunette) : 30%<br>
+        -Sensibilité de construction : 100%<br>
+        -Sensibilité de modification : 100%<br>
+        - Mode performance activé pour plus de FPS</p>
+      </div>
+      <div style="flex:0 0 380px; max-width:380px; display:flex; flex-direction:column; align-items:center;">
+        <iframe width="100%" height="200" src="https://www.youtube.com/embed/o4bcXTXLlsE" title="Fortnite Pro Settings Guide" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius:8px;"></iframe>@swiMagaming
+        <a href="sensi_CS.html" target="_self" class="btn" style="margin-top:14px; width:90%; text-align:center;">En savoir plus</a>
+      </div>
+    </div>
+
+    <div class="guide" style="display:flex; align-items:flex-start; gap:32px;">
+      <div style="flex:1; min-width:220px;">
+        <h2>⚙️ Réglages pro recommandés pour Manette</h2>
+        <p>Optimise ton gameplay avec ces réglages :<br>
+        - Sensibilité manette : entre 43 et 45%<br>
+        - Sensibilité(construction) : 2%<br>
+        - Sensibilité(modification) : 2,1%<br>
+        - Sensibilité visée : 7% (vertical) / 7% (horizontal) avec un boost de 1%<br>
+        - Mode performance activé (120fps) pour plus de FPS</p>
+      </div>
+      <div style="flex:0 0 380px; max-width:380px; display:flex; flex-direction:column; align-items:center;">
+        <iframe width="100%" height="200" src="https://www.youtube.com/embed/B399wEZ4bBo" title="Fortnite Pro Controller Settings" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius:8px;"></iframe>@WILL-CHRLS
+        <a href="sensi_manette.html" target="_self" class="btn" style="margin-top:14px; width:90%; text-align:center;">En savoir plus</a>
+      </div>
+    </div>
+    
+    <div class="guide" style="display:flex; align-items:flex-start; gap:32px;">
+      <div style="flex:1; min-width:220px;">
+        <h2>💰 Obtenir des V-bucks légalement</h2>
+        <p>Évite les arnaques et les générateurs de V-bucks !<br>
+        Utilise aussi les cartes VBucks ici :<br><br>
+        <a href="https://store.epicgames.com/fr/browse?q=vbucks&sortBy=relevancy&sortDir=DESC&count=40" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        style="display:inline-block; margin-top:10px; padding:8px 12px; background:#0f73ff; color:white; text-decoration:none; border-radius:4px;">
+        Voir les offres
+        </a>
+        </p>
+      </div>
+      <div style="flex:0 0 160px; max-width:160px; display:flex; flex-direction:column; align-items:center;">
+        <img src="Images/VBucks.png" style="width:170px; border-radius:12px; box-shadow:0 4px 16px rgba(0,0,0,0.18); margin-top:30px;">
+        <button onclick="window.location.href='vbucks.html'" 
+                style="margin-top: 14px; padding: 10px 20px; background: #61dafb; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; width:90%; text-align:center;">
+          En savoir plus
+        </button>
+      </div>
+    </div>
+
+  </section>
+
+  <footer style="text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #aaa;
+      background: #20232a;">
+    &copy; 2025 FortniteBoost.fr — Site non officiel Fortnite™
+  </footer>
+
+ <script>
+  const btnPioches = document.querySelector('nav button');
+  const menuPioches = document.querySelector('.menu-pioches');
+
+  if (btnPioches && menuPioches) {
+    let isHovered = false;
+
+    btnPioches.addEventListener('mouseenter', () => {
+      isHovered = true;
+      menuPioches.style.display = 'block';
+    });
+
+    btnPioches.addEventListener('mouseleave', () => {
+      setTimeout(() => {
+        if (!isHovered) menuPioches.style.display = 'none';
+      }, 150);
+    });
+
+    menuPioches.addEventListener('mouseenter', () => {
+      isHovered = true;
+      menuPioches.style.display = 'block';
+    });
+
+    menuPioches.addEventListener('mouseleave', () => {
+      isHovered = false;
+      menuPioches.style.display = 'none';
+    });
+
+    // Toggle menu on click (mobile)
+    btnPioches.addEventListener('click', () => {
+      const isVisible = menuPioches.style.display === 'block';
+      menuPioches.style.display = isVisible ? 'none' : 'block';
+    });
+  }
+</script>
+<!-- Bandeau Cookies RGPD -->
+<div id="cookie-banner" style="position: fixed; bottom: 0; left: 0; right: 0; background: #1c1e35; color: white; padding: 15px; display: none; justify-content: space-between; align-items: center; z-index: 1000; flex-wrap: wrap;">
+  <span>Ce site utilise des cookies pour améliorer l'expérience utilisateur. </span>
+  <div style="margin-top: 10px;">
+    <button onclick="acceptCookies()" style="margin-right:10px; background:#6ca0ff; color:#000; padding:6px 12px; border:none; border-radius:8px;">Accepter</button>
+    <button onclick="refuseCookies()" style="background:#ccc; color:#000; padding:6px 12px; border:none; border-radius:8px;">Refuser</button>
+  </div>
+</div>
+<script>
+  function setCookie(name, value, days) {
+    const d = new Date();
+    d.setTime(d.getTime() + (days*24*60*60*1000));
+    const expires = "expires="+ d.toUTCString();
+    document.cookie = name + "=" + value + ";" + expires + ";path=/";
+  }
+
+  function getCookie(name) {
+    const cname = name + "=";
+    const decodedCookie = decodeURIComponent(document.cookie);
+    const ca = decodedCookie.split(';');
+    for(let i = 0; i < ca.length; i++) {
+      let c = ca[i].trim();
+      if (c.indexOf(cname) === 0) return c.substring(cname.length, c.length);
+    }
+    return "";
+  }
+
+  function acceptCookies() {
+    setCookie("cookies_consent", "accepted", 365);
+    document.getElementById("cookie-banner").style.display = "none";
+  }
+
+  function refuseCookies() {
+    setCookie("cookies_consent", "refused", 365);
+    document.getElementById("cookie-banner").style.display = "none";
+  }
+
+  // Affiche le bandeau seulement si pas encore de choix
+  window.onload = function() {
+    const consent = getCookie("cookies_consent");
+    if (!consent) {
+      document.getElementById("cookie-banner").style.display = "flex";
+    }
+  }
+</script>
+</body>
+</html>

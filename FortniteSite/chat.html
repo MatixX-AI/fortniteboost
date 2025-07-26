@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>FortniteBoost - Chat privé</title>
+<style>
+  html { scroll-behavior:smooth; }
+  body {
+    font-family:Arial,sans-serif;
+    background:#1e1e2f;
+    color:white;
+    margin:0;
+  }
+
+  /* ===== BANNIÈRE ===== */
+  .banner {
+    width:100%;
+    background:#20232a;
+    box-shadow:0 2px 16px rgba(0,0,0,0.18);
+    padding:20px 16px;
+    display:flex;
+    justify-content:center;
+    position: relative; /* pour position bouton déconnexion */
+  }
+  .banner-content {
+    width:100%;
+    max-width:1400px;
+    display:flex;
+    align-items:center;
+    gap:32px;
+    flex-wrap:wrap;
+    position: relative;
+  }
+  .banner-logo {
+    height:90px;
+    width:auto;
+  }
+  .banner-center {
+    flex:1;
+    min-width:260px;
+    text-align:center;
+  }
+  .banner-title {
+    margin:0;
+    font-size:2.5rem;
+    color:#61dafb;
+  }
+  .banner-subtitle {
+    margin:8px 0 0 0;
+    font-size:1.15rem;
+    color:#ccc;
+  }
+  .banner-nav {
+    margin-top:16px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:18px;
+    flex-wrap:wrap;
+  }
+  .banner-nav a,
+  .banner-nav button {
+    color:#61dafb;
+    background:none;
+    border:none;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:1rem;
+    cursor:pointer;
+    padding:0 8px;
+    transition:color 0.2s;
+  }
+  .banner-nav a:hover,
+  .banner-nav button:hover {
+    color:#fff;
+    text-shadow:0 0 8px #0f73ff;
+  }
+
+  /* Bouton déconnexion en haut à droite */
+  #logoutBtn {
+    position: absolute;
+    right: 20px;
+    top: 25px;
+    padding: 8px 16px;
+    background: #dc3545;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 10px #dc3545;
+    display: none; /* caché par défaut */
+    transition: background 0.25s;
+  }
+  #logoutBtn:hover {
+    background: #a32830;
+    box-shadow: 0 0 16px #a32830;
+  }
+
+  .dropdown { position:relative; display:inline-block; }
+  .menu-pioches {
+    display:none;
+    position:absolute;
+    left:0;
+    top:100%;
+    background:#20232a;
+    min-width:180px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.4);
+    border-radius:8px;
+    padding:4px 0;
+    z-index:200;
+    text-align:left;
+  }
+  .menu-pioches a {
+    display:block;
+    padding:10px 18px;
+    font-weight:bold;
+    color:#61dafb;
+    text-decoration:none;
+  }
+  .menu-pioches a:hover {
+    background:#0f73ff;
+    color:#fff;
+    box-shadow:0 0 12px 2px #0f73ff;
+    text-shadow:0 0 8px #0f73ff;
+  }
+  .menu-pioches.show { display:block !important; }
+
+  /* ===== CHAT ===== */
+  #chatWrapper {
+    padding:40px 16px 80px;
+  }
+  #chatContainer {
+    display:none; /* visible après connexion */
+    background:#161b22;
+    border-radius:12px;
+    padding:20px;
+    max-width:900px;
+    margin:0 auto;
+    box-shadow:0 0 20px #0f73ff88;
+  }
+  #chatContainer h2 {
+    margin-top:0;
+    color:#61dafb;
+    text-align:center;
+  }
+  #chatBox {
+    min-height:300px;
+    max-height:500px;
+    overflow-y:auto;
+    border:1px solid #0f73ff;
+    border-radius:8px;
+    padding:10px;
+    background:#20232a;
+    margin-bottom:15px;
+  }
+  .message { margin-bottom:10px; word-wrap:break-word; }
+  .username { font-weight:bold; color:#61dafb; margin-right:6px; }
+
+  #inputArea {
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+  }
+  #username,
+  #messageInput {
+    padding:8px;
+    border-radius:6px;
+    border:1px solid #0f73ff;
+    background:#20232a;
+    color:white;
+  }
+  #username { flex-basis:25%; min-width:150px; font-weight:bold; }
+  #messageInput { flex:1; min-width:160px; }
+  #sendBtn {
+    padding:10px 18px;
+    background:#0f73ff;
+    border:none;
+    border-radius:8px;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+    box-shadow:0 0 10px #0f73ff;
+    transition:background 0.25s;
+  }
+  #sendBtn:hover { background:#0b52cc; box-shadow:0 0 16px #0b52cc; }
+
+  /* ===== MODALE OVERLAY ===== */
+  #memberOverlay {
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.85);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:9999;
+  }
+  .modal-box {
+    width:90%;
+    max-width:400px;
+    background:#20232a;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 0 20px #0f73ff88;
+    text-align:center;
+  }
+  .modal-box h2 {
+    margin-top:0;
+    color:#61dafb;
+  }
+  .modal-box p { color:#ccc; margin-bottom:20px; }
+
+  .modal-box input {
+    width:100%;
+    padding:10px;
+    margin-bottom:12px;
+    border:none;
+    border-radius:6px;
+    background:#161b22;
+    color:white;
+  }
+  .modal-btn {
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    border:none;
+    border-radius:8px;
+    font-weight:bold;
+    cursor:pointer;
+    color:white;
+    font-size:16px;
+  }
+  .modal-btn.blue { background:#0d6efd; }
+  .modal-btn.red { background:#dc3545; }
+  .modal-btn.green { background:#28a745; }
+  .modal-btn.gray { background:#6c757d; }
+
+  /* masqués par défaut (gérés en JS) */
+  #loginPanel,
+  #signupPanel { display:none; }
+
+  @media (max-width:600px){
+    .banner-title{font-size:1.8rem;}
+    .banner-subtitle{font-size:1rem;}
+    #inputArea{gap:8px;}
+    #username, #sendBtn{flex-basis:100%;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== BANNIÈRE ===== -->
+<header class="banner">
+  <div class="banner-content">
+    <img src="Images/Logo.png.png" class="banner-logo" alt="Logo FortniteBoost" />
+    <div class="banner-center">
+      <h1 class="banner-title">FortniteBoost</h1>
+      <p class="banner-subtitle">Les meilleures astuces et guides pour progresser sur Fortnite</p>
+      <nav class="banner-nav">
+        <a href="accueil.html">Accueil</a>
+        <a href="equipement.html">Equipement pro Fortnite</a>
+        <a href="map.html">Carte Fortnite</a>
+        <div class="dropdown">
+          <button class="btn" aria-haspopup="true" aria-expanded="false" onclick="toggleMenu()">Top 10 ▼</button>
+          <div class="menu-pioches" id="menuPioches">
+            <a href="pioche.html">Pioches</a>
+            <a href="sac_a_dos.html">Sac à dos</a>
+            <a href="planeur.html">Planeur</a>
+            <a href="skin.html">Skin</a>
+          </div>
+        </div>
+        <a href="quiz.html">Quiz</a>
+        <a href="pseudo.html" style="color:#61dafb; margin: 0 15px; text-decoration:none; font-weight:bold;">Pseudo</a>
+      </nav>
+    </div>
+    <button id="logoutBtn" onclick="deconnecter()">Déconnexion</button>
+  </div>
+</header>
+
+<!-- ===== CHAT ===== -->
+<div id="chatWrapper">
+  <div id="chatContainer">
+    <h2>Chat privé</h2>
+    <div id="chatBox" aria-live="polite" aria-label="Zone de discussion"></div>
+    <div id="inputArea">
+      <input type="text" id="username" placeholder="Ton pseudo" maxlength="20" aria-label="Pseudo" />
+      <input type="text" id="messageInput" placeholder="Tape ton message..." maxlength="200" aria-label="Message" />
+      <button id="sendBtn" aria-label="Envoyer le message" onclick="sendMessage()">Envoyer</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== MODALE MEMBRE + PANELS ===== -->
+<div id="memberOverlay">
+  <div class="modal-box" id="choicePanel">
+    <h2>Accès réservé aux membres</h2>
+    <p>Tu dois être membre pour utiliser le chat privé.</p>
+    <button class="modal-btn blue" onclick="showLogin()">Je suis membre</button>
+    <button class="modal-btn red" onclick="redirectToHome()">Je ne suis pas membre</button>
+    <button class="modal-btn green" onclick="showSignup()">Créer un compte</button>
+  </div>
+
+  <div class="modal-box" id="loginPanel">
+    <h2>Connexion</h2>
+    <input type="email" id="loginEmail" placeholder="Email" />
+    <input type="password" id="loginPassword" placeholder="Mot de passe" />
+    <button class="modal-btn blue" onclick="validerConnexion()">Se connecter</button>
+    <button class="modal-btn gray" onclick="showChoice()">Retour</button>
+  </div>
+
+  <div class="modal-box" id="signupPanel">
+    <h2>Créer un compte</h2>
+    <input type="email" id="signupEmail" placeholder="Email" />
+    <input type="password" id="signupPassword" placeholder="Mot de passe" />
+    <input type="password" id="signupConfirm" placeholder="Confirme le mot de passe" />
+    <button class="modal-btn green" onclick="validerInscription()">S'inscrire</button>
+    <button class="modal-btn gray" onclick="showChoice()">Retour</button>
+  </div>
+</div>
+
+<script>
+  /* ----- Dropdown ----- */
+  function toggleMenu(){
+    const menu = document.getElementById('menuPioches');
+    menu.classList.toggle('show');
+  }
+  document.addEventListener('click', (e)=>{
+    const dd = e.target.closest('.dropdown');
+    if(!dd){
+      const menu = document.getElementById('menuPioches');
+      if(menu) menu.classList.remove('show');
+    }
+  });
+
+  /* ----- Panels modale ----- */
+  function showChoice(){
+    document.getElementById('choicePanel').style.display='block';
+    document.getElementById('loginPanel').style.display='none';
+    document.getElementById('signupPanel').style.display='none';
+  }
+  function showLogin(){
+    document.getElementById('choicePanel').style.display='none';
+    document.getElementById('loginPanel').style.display='block';
+    document.getElementById('signupPanel').style.display='none';
+  }
+  function showSignup(){
+    document.getElementById('choicePanel').style.display='none';
+    document.getElementById('loginPanel').style.display='none';
+    document.getElementById('signupPanel').style.display='block';
+  }
+
+  /* ----- Redirection non-membre ----- */
+  function redirectToHome(){
+    window.location.href = "FortniteBoost.html"; // change si nécessaire
+  }
+
+  /* ----- Connexion (simulation) ----- */
+  function validerConnexion(){
+    const email = document.getElementById('loginEmail').value.trim();
+    const mdp   = document.getElementById('loginPassword').value.trim();
+    if(!email || !mdp){
+      alert('Merci de remplir tous les champs.');
+      return;
+    }
+    // Identifiants de test
+    if(email === 'membre@boost.fr' && mdp === 'fortnite123'){
+      alert('Connexion réussie !');
+      ouvrirChat();
+    } else {
+      alert('Email ou mot de passe incorrect.');
+    }
+  }
+
+  /* ----- Inscription (simulation) ----- */
+  function validerInscription(){
+    const email = document.getElementById('signupEmail').value.trim();
+    const pass  = document.getElementById('signupPassword').value;
+    const conf  = document.getElementById('signupConfirm').value;
+    if(!email || !pass || !conf){
+      alert('Merci de remplir tous les champs.');
+      return;
+    }
+    if(pass.trim() !== conf.trim()){
+      alert('Les mots de passe ne correspondent pas.');
+      return;
+    }
+    alert('Compte créé ! Tu peux maintenant te connecter.');
+    showLogin();
+  }
+
+  /* ----- Ouvrir chat après connexion ----- */
+  function ouvrirChat(){
+    localStorage.setItem('fb_isMember','true');
+    document.getElementById('memberOverlay').style.display='none';
+    document.getElementById('chatContainer').style.display='block';
+    document.getElementById('logoutBtn').style.display = 'inline-block';
+  }
+
+  /* ----- Vérifier si membre déjà connecté ----- */
+  document.addEventListener('DOMContentLoaded',()=>{
+    const wasMember = localStorage.getItem('fb_isMember') === 'true';
+    if(wasMember){
+      document.getElementById('memberOverlay').style.display='none';
+      document.getElementById('chatContainer').style.display='block';
+      document.getElementById('logoutBtn').style.display = 'inline-block';
+    } else {
+      showChoice();
+    }
+  });
+
+  /* ----- Chat local ----- */
+  function sendMessage(){
+    const pseudo = document.getElementById('username').value.trim() || 'Anonyme';
+    const msg = document.getElementById('messageInput').value.trim();
+    if(!msg) return;
+
+    const chatBox = document.getElementById('chatBox');
+    const div = document.createElement('div');
+    div.classList.add('message');
+    div.innerHTML = `<span class="username">${escapeHtml(pseudo)}:</span> ${escapeHtml(msg)}`;
+    chatBox.appendChild(div);
+    chatBox.scrollTop = chatBox.scrollHeight;
+    document.getElementById('messageInput').value = '';
+  }
+
+  /* ----- Escape HTML pour sécurité ----- */
+  function escapeHtml(text) {
+    return text.replace(/[&<>"']/g, function(m) {
+      return ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#39;'
+      })[m];
+    });
+  }
+
+  /* ----- Déconnexion ----- */
+  function deconnecter() {
+    localStorage.removeItem('fb_isMember');
+    document.getElementById('chatContainer').style.display = 'none';
+    document.getElementById('logoutBtn').style.display = 'none';
+    document.getElementById('memberOverlay').style.display = 'flex';
+    window.location.href = 'accueil.html';  // Redirection vers accueil
+  }
+</script>
+</body>
+</html>

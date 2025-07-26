@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz Fortnite - FortniteBoost</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background: #1e1e2f;
+      color: #fff;
+      margin: 0;
+      line-height: 1.6;
+      padding: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 30px;
+    }
+    h1 {
+      text-align: center;
+      color: #fff;
+    }
+    .question {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    .question h2 {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+      color: #58a6ff;
+      text-align: left;
+    }
+    .answers {
+      text-align: left;
+    }
+    .answers label {
+      display: block;
+      margin-bottom: 5px;
+      cursor: pointer;
+    }
+     nav a {
+      color: #61dafb;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      padding: 0 8px;
+      transition: color 0.2s;
+    }
+    nav a:hover, nav a:focus {
+      color: #fff;
+      text-shadow: 0 0 8px #0f73ff;
+    }
+    .menu-pioches a:hover {
+      background: #0f73ff !important;
+      color: #fff !important;
+      box-shadow: 0 0 12px 2px #0f73ff, 0 0 4px #0f73ff;
+      text-shadow: 0 0 8px #0f73ff;
+      z-index: 20;
+    }
+    #result {
+      font-size: 1.3rem;
+      color: #6ee7b7;
+      margin-top: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+ <header style="padding: 20px; background: #20232a; box-shadow: 0 0 15px 4px #0f73ff;">
+    <img src="Images/Logo.png.png" style="width: 90px; margin-bottom: 10px; float: left; margin-left: 40px; margin-right: 30px; height: auto;">
+    <h1 style="margin:0; font-size:2.5rem; color:#61dafb; font-family:'Segoe UI',Arial,sans-serif; letter-spacing:2px;">FortniteBoost</h1>
+    <p style="font-size:1.15rem; color:#ccc; margin:8px 0 0 0;">Les meilleures astuces et guides pour progresser sur Fortnite</p>
+    <nav style="text-align:center; background:#20232a; padding: 10px 0;">
+      <a href="accueil.html" style="color:#61dafb; margin: 0 15px; text-decoration:none; font-weight:bold;">Accueil</a>
+      <a href="equipement.html" style="color:#61dafb; margin: 0 15px; text-decoration:none; font-weight:bold;">Equipement pro Fortnite</a>
+      <a href="map.html" style="color:#61dafb; margin: 0 15px; text-decoration:none; font-weight:bold;">Carte Fortnite</a>
+      <div style="display:inline-block; position:relative;">
+        <button style="background:none; border:none; color:#61dafb; font-weight:bold; margin:0 15px; font-size:1rem; cursor:pointer;">Top 10 ▼</button>
+        <div style="display:none; position:absolute; left:0; top:100%; background:#20232a; min-width:180px; box-shadow:0 2px 8px rgba(0,0,0,0.12); border-radius:8px; z-index:10; text-align:left; font-family:Arial,sans-serif; font-weight:bold;" class="menu-pioches">
+          <a href="pioche.html" style="display:block; color:#61dafb; padding:10px 18px; text-decoration:none;">Pioches</a>
+          <a href="sac_a_dos.html" style="display:block; color:#61dafb; padding:10px 18px; text-decoration:none;">Sac à dos</a>
+          <a href="planeur.html" style="display:block; color:#61dafb; padding:10px 18px; text-decoration:none;">Planeur</a>
+          <a href="skin.html" style="display:block; color:#61dafb; padding:10px 18px; text-decoration:none;">Skin</a>
+          <a href="danse.html" style="display:block; padding:10px 18px;">Danses</a>
+        </div>
+      </div>
+      <a href="quiz.html" style="color:#61dafb; margin: 0 15px; text-decoration:none; font-weight:bold;">Quiz</a>
+      <a href="pseudo.html" style="color:#61dafb; margin: 0 15px; text-decoration:none; font-weight:bold;">Pseudo</a>
+      <a href="mention.html" class="btn" style="margin: 0 8px;">Mentions légales et confidentialité</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1>Quiz Fortnite</h1>
+    <form id="quizForm"></form>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    const questions = [
+      {
+        question: "Quelle est la date de sortie de Fortnite Battle Royale ?",
+        options: ["2015", "2017", "2018", "2020"],
+        answer: 1
+      },
+      {
+        question: "Quel est le matériau le plus résistant dans Fortnite ?",
+        options: ["Bois", "Pierre", "Métal", "Verre"],
+        answer: 2
+      },
+      {
+        question: "Combien de joueurs maximum par partie en Battle Royale ?",
+        options: ["50", "75", "100", "150"],
+        answer: 2
+      },
+      {
+        question: "Quel objet vous permet de voler temporairement ?",
+        options: ["Jetpack", "Mini gun", "Tourelle", "Potion de bouclier"],
+        answer: 0
+      },
+      {
+        question: "Quel est le nom de la ville mythique avec Tilted dans le nom ?",
+        options: ["Tilted Town", "Neo Tilted", "Tilted Towers", "All Tilted"],
+        answer: 2
+      },
+      {
+        question: "Quel est le nom du skin de base masculin ?",
+        options: ["Ramirez", "Jonesy", "Peely", "Bunker"],
+        answer: 1
+      },
+      {
+        question: "Quel est le mode qui n'existe pas ?",
+        options: ["Sauver le Monde", "Arène", "Zombies", "Créatif"],
+        answer: 2
+      },
+      {
+        question: "Quel est l'objet légendaire qui soigne et donne des shields ?",
+        options: ["Poisson Slurp", "Boogie Bomb", "Chug Jug", "Medikit"],
+        answer: 2
+      },
+      {
+        question: "Quelle est la première arme de Fortnite ?",
+        options: ["Lance-roquettes", "Pistolet gris", "Sniper", "Pompe bleu"],
+        answer: 1
+      },
+      {
+        question: "Quel boss apparaissait dans l’Agence (S2) ?",
+        options: ["Jules", "Midas", "Slone", "Meowscles"],
+        answer: 1
+      },
+      {
+        question: "Quelle saison introduit la construction zéro ?",
+        options: ["Chapitre 2 Saison 8", "Chapitre 3 Saison 2", "Chapitre 4 Saison 1", "Chapitre 1 Saison X"],
+        answer: 1
+      },
+      {
+        question: "Quelle est l'île actuelle dans le Chapitre 6 ?",
+        options: ["Athéna", "Artémis", "Asteria", "Apollon"],
+        answer: 2
+      },
+      {
+        question: "Quelle rareté est en dessous de 'Légendaire' ?",
+        options: ["Vert", "Bleu", "Épique", "Gris"],
+        answer: 2
+      },
+      {
+        question: "Quel est le nom duskin banane ?",
+        options: ["Fishy", "Peely", "Fishstick", "BananaMan"],
+        answer: 1
+      },
+      {
+        question: "Quelle compagnie développe Fortnite ?",
+        options: ["Activision", "Ubisoft", "Epic Games", "Valve"],
+        answer: 2
+      },
+      {
+        question: "Quel objet est utilisé pour se téléporter ?",
+        options: ["Faille de poche", "Grenade répulsive", "Boogie Bomb", "Tourelle"],
+        answer: 0
+      },
+      {
+        question: "Quelle est la monnaie du jeu ?",
+        options: ["FortCoins", "BattlePoints", "V-Bucks", "G-Coins"],
+        answer: 2
+      },
+      {
+        question: "Quel skin est un chevalier noir ?",
+        options: ["Dark Voyager", "Black Knight", "Omega", "Ragnarok"],
+        answer: 1
+      },
+      {
+        question: "Quel est le rôle de la tempête ?",
+        options: ["Soigne", "Fait danser", "Réduit la zone", "Double les dégâts"],
+        answer: 2
+      },
+      {
+        question: "Quel accessoire permet de planer depuis les airs ?",
+        options: ["Jetpack", "Aile volante", "Parapente", "Planeur"],
+        answer: 3
+      }
+    ];
+
+    const quizForm = document.getElementById("quizForm");
+
+    questions.forEach((q, index) => {
+      const qDiv = document.createElement("div");
+      qDiv.classList.add("question");
+      qDiv.innerHTML = `<h2>Q${index + 1}. ${q.question}</h2>`;
+      const answers = document.createElement("div");
+      answers.classList.add("answers");
+
+      q.options.forEach((option, i) => {
+        const id = `q${index}_a${i}`;
+        answers.innerHTML += `
+          <label>
+            <input type="radio" name="q${index}" value="${i}" required> ${option}
+          </label>
+        `;
+      });
+
+      qDiv.appendChild(answers);
+      quizForm.appendChild(qDiv);
+    });
+
+    const submitBtn = document.createElement("button");
+    submitBtn.className = "btn";
+    submitBtn.type = "submit";
+    submitBtn.textContent = "Valider mes réponses";
+    quizForm.appendChild(submitBtn);
+
+    quizForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      let score = 0;
+      questions.forEach((q, i) => {
+        const answer = quizForm[`q${i}`].value;
+        if (parseInt(answer) === q.answer) score++;
+      });
+
+      document.getElementById("result").textContent = `🎯 Tu as obtenu ${score} / ${questions.length} bonnes réponses !`;
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
+  <footer style="text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #aaa;
+      background: #20232a;">
+    &copy; 2025 FortniteBoost.fr — Site non officiel Fortnite™
+  </footer>
+ <script>
+  const btnPioches = document.querySelector('nav button');
+  const menuPioches = document.querySelector('.menu-pioches');
+
+  if (btnPioches && menuPioches) {
+    let isHovered = false;
+
+    btnPioches.addEventListener('mouseenter', () => {
+      isHovered = true;
+      menuPioches.style.display = 'block';
+    });
+
+    btnPioches.addEventListener('mouseleave', () => {
+      setTimeout(() => {
+        if (!isHovered) menuPioches.style.display = 'none';
+      }, 150);
+    });
+
+    menuPioches.addEventListener('mouseenter', () => {
+      isHovered = true;
+      menuPioches.style.display = 'block';
+    });
+
+    menuPioches.addEventListener('mouseleave', () => {
+      isHovered = false;
+      menuPioches.style.display = 'none';
+    });
+
+    // Toggle menu on click (mobile)
+    btnPioches.addEventListener('click', () => {
+      const isVisible = menuPioches.style.display === 'block';
+      menuPioches.style.display = isVisible ? 'none' : 'block';
+    });
+  }
+</script>
+
+</body>
+</html>

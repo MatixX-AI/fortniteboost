@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Avis & Commentaires - FortniteBoost</title>
+  <style>
+     html {
+      scroll-behavior: smooth;
+    }
+    body {
+      background: #1e1e2f;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 20px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    h1 {
+      color: #61dafb;
+      text-align: center;
+    }
+    form {
+      background: #161b22;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 30px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: none;
+      resize: vertical;
+      font-size: 1rem;
+    }
+    button {
+      background: #61dafb;
+      color: #000;
+      font-weight: bold;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #4eaee7;
+    }
+    .comment {
+      background: #161b22;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+    .comment .author {
+      font-weight: bold;
+      color: #58a6ff;
+    }
+    .comment .date {
+      font-size: 0.85rem;
+      color: #999;
+      margin-bottom: 8px;
+    }
+    .comment .text {
+      white-space: pre-wrap;
+    }
+    .no-comments {
+      text-align: center;
+      color: #666;
+      font-style: italic;
+      margin-top: 40px;
+    }
+    nav a:hover, nav a:focus {
+      color: #fff;
+      text-shadow: 0 0 8px #0f73ff;
+    }
+    .menu-pioches a:hover {
+      background: #0f73ff !important;
+      color: #fff !important;
+      box-shadow: 0 0 12px 2px #0f73ff, 0 0 4px #0f73ff;
+      text-shadow: 0 0 8px #0f73ff;
+      z-index: 20;
+    }
+  </style>
+</head>
+<body>
+  <header style="width:100vw; min-width:100vw; background:#20232a; padding:24px 0 0 0; text-align:left; margin-bottom:18px; display:flex; align-items:center; position:fixed; top:0; left:0; z-index:100;">
+    <img src="Images/Logo.png.png" style="height:90px; margin-left:32px; margin-right:24px; vertical-align:middle; float:left;">
+    <div style="flex:1; text-align:left;">
+      <h1 style="margin:0; font-size:2.5rem; color:#61dafb; font-family:'Segoe UI',Arial,sans-serif; letter-spacing:2px; text-align:center;">FortniteBoost</h1>
+      <p style="font-size:1.15rem; color:#ccc; margin:8px 0 0 0; text-align:center;">Les meilleures astuces et guides pour progresser sur Fortnite</p>
+     <nav style="text-align:center; background:#20232a; padding: 10px 0;">
+    <a href="accueil.html" style="color:#61dafb; margin: 0 15px; text-decoration:none; font-weight:bold;">Accueil</a>
+    <a href="equipement.html" style="color:#61dafb; margin: 0 15px; text-decoration:none; font-weight:bold;">Equipement pro Fortnite</a>
+    <a href="map.html" style="color:#61dafb; margin: 0 15px; text-decoration:none; font-weight:bold;">Carte Fortnite</a>
+    <div style="display:inline-block; position:relative;">
+      <button style="background:none; border:none; color:#61dafb; font-weight:bold; margin:0 15px; font-size:1rem; cursor:pointer;">Top 10 ▼</button>
+      <div style="display:none; position:absolute; left:0; top:100%; background:#20232a; min-width:180px; box-shadow:0 2px 8px rgba(0,0,0,0.12); border-radius:8px; z-index:10; text-align:left; font-family:Arial,sans-serif; font-weight:bold;" class="menu-pioches">
+        <a href="pioche.html" style="display:block; color:#61dafb; padding:10px 18px; text-decoration:none;">Pioches</a>
+        <a href="sac_a_dos.html" style="display:block; color:#61dafb; padding:10px 18px; text-decoration:none;">Sac à dos</a>
+        <a href="planeur.html" style="display:block; color:#61dafb; padding:10px 18px; text-decoration:none;">Planeur</a>
+        <a href="skin.html" style="display:block; color:#61dafb; padding:10px 18px; text-decoration:none;">Skin</a>
+      </div>
+    </div>
+    <a href="quiz.html" style="color:#61dafb; margin: 0 15px; text-decoration:none; font-weight:bold;">Quiz</a>
+    <a href="pseudo.html" style="color:#61dafb; margin: 0 15px; text-decoration:none; font-weight:bold;">Pseudo</a>
+  </nav>
+    </div>
+  </header>
+  <div style="height:140px;"></div>
+  <h1 style="text-align:center; margin-bottom:30px; color:#fff;">Avis</h1>
+
+  <form id="comment-form">
+    <label for="author">Nom :</label>
+    <input type="text" id="author" name="author" placeholder="Votre prénom" required minlength="2" maxlength="30" />
+
+    <label for="rating">Note :</label>
+    <div id="rating" style="font-size: 2rem; user-select: none; cursor: pointer; color: white; margin-bottom: 15px; text-align:center;">
+      <span data-value="1">☆</span>
+      <span data-value="2">☆</span>
+      <span data-value="3">☆</span>
+      <span data-value="4">☆</span>
+      <span data-value="5">☆</span>
+    </div>
+
+    <label for="comment">Commentaire :</label>
+    <textarea id="comment" name="comment" rows="4" placeholder="Votre avis..." required minlength="5" maxlength="500"></textarea>
+
+    <button type="submit">Envoyer</button>
+  </form>
+
+  <div id="comments-section">
+    <p class="no-comments">Aucun commentaire pour l’instant, soyez le premier !</p>
+  </div>
+
+  <script>
+    const form = document.getElementById('comment-form');
+    const commentsSection = document.getElementById('comments-section');
+    // Système d'étoiles interactives moderne
+    const ratingStars = document.querySelectorAll('#rating span');
+    let currentRating = 0;
+
+    ratingStars.forEach(star => {
+      star.addEventListener('click', () => {
+        currentRating = parseInt(star.getAttribute('data-value'));
+        updateStars(currentRating);
+      });
+
+      star.addEventListener('mouseover', () => {
+        const hoverValue = parseInt(star.getAttribute('data-value'));
+        updateStars(hoverValue);
+      });
+
+      star.addEventListener('mouseout', () => {
+        updateStars(currentRating);
+      });
+    });
+
+    function updateStars(rating) {
+      ratingStars.forEach(star => {
+        if (parseInt(star.getAttribute('data-value')) <= rating) {
+          star.style.color = '#f5b50a'; // jaune
+          star.textContent = '★'; // étoile pleine
+        } else {
+          star.style.color = 'white'; // blanc
+          star.textContent = '☆'; // étoile vide
+        }
+      });
+    }
+    updateStars(currentRating);
+
+    function formatDate(date) {
+      return date.toLocaleDateString('fr-FR', {
+        year: 'numeric', month: 'long', day: 'numeric',
+        hour: '2-digit', minute: '2-digit'
+      });
+    }
+
+    function addComment(author, text) {
+      const noCommentsText = commentsSection.querySelector('.no-comments');
+      if (noCommentsText) noCommentsText.remove();
+
+      const commentDiv = document.createElement('div');
+      commentDiv.className = 'comment';
+
+      const authorEl = document.createElement('div');
+      authorEl.className = 'author';
+      authorEl.textContent = author;
+
+      const dateEl = document.createElement('div');
+      dateEl.className = 'date';
+      dateEl.textContent = formatDate(new Date());
+
+      const textEl = document.createElement('div');
+      textEl.className = 'text';
+      textEl.textContent = text;
+
+      commentDiv.appendChild(authorEl);
+      commentDiv.appendChild(dateEl);
+      commentDiv.appendChild(textEl);
+
+      commentsSection.prepend(commentDiv);
+    }
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      console.log('Formulaire soumis');
+
+      const author = form.author.value.trim();
+      const comment = form.comment.value.trim();
+
+      if (author.length >= 2 && comment.length >= 5) {
+        addComment(author, comment);
+        form.reset();
+      } else {
+        alert('Merci de remplir correctement le formulaire.');
+      }
+    });
+  </script>
+  <script>
+  const btnPioches = document.querySelector('nav button');
+  const menuPioches = document.querySelector('.menu-pioches');
+
+  if (btnPioches && menuPioches) {
+    let isHovered = false;
+
+    btnPioches.addEventListener('mouseenter', () => {
+      isHovered = true;
+      menuPioches.style.display = 'block';
+    });
+
+    btnPioches.addEventListener('mouseleave', () => {
+      setTimeout(() => {
+        if (!isHovered) menuPioches.style.display = 'none';
+      }, 150);
+    });
+
+    menuPioches.addEventListener('mouseenter', () => {
+      isHovered = true;
+      menuPioches.style.display = 'block';
+    });
+
+    menuPioches.addEventListener('mouseleave', () => {
+      isHovered = false;
+      menuPioches.style.display = 'none';
+    });
+
+    // Toggle menu on click (mobile)
+    btnPioches.addEventListener('click', () => {
+      const isVisible = menuPioches.style.display === 'block';
+      menuPioches.style.display = isVisible ? 'none' : 'block';
+    });
+  }
+</script>
+
+
+</body>
+</html>

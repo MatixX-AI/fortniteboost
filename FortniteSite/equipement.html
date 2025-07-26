@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Équipement Pro Fortnite</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background: #1e1e2f;
+      color: white;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .equip-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .equip-item {
+      background: #2c2c44;
+      border-radius: 8px;
+      padding: 15px;
+      width: 250px;
+      box-shadow: 0 0 10px #0f73ff;
+      transition: transform 0.3s ease;
+    }
+    .equip-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #0f73ff;
+    }
+    .equip-item img {
+      width: 100%;
+      border-radius: 6px;
+    }
+    .equip-item h3 {
+      margin: 10px 0 5px;
+    }
+    .equip-item p {
+      font-size: 14px;
+      line-height: 1.4;
+    }
+    .filter-btn {
+  background: #2c2c44;
+  border: 1px solid #0f73ff;
+  color: #61dafb;
+  padding: 8px 14px;
+  margin: 5px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: #0f73ff;
+  color: white;
+  box-shadow: 0 0 10px #0f73ff;
+}
+
+  </style>
+</head>
+<body>
+
+
+
+  
+  <header style="padding: 20px; background: #20232a; box-shadow: 0 0 15px 4px #0f73ff;">
+    <div class="banner-content">
+      <img src="Images/Logo.png.png" class="banner-logo" alt="Logo FortniteBoost">
+      <div class="banner-center">
+        <h1 class="banner-title">FortniteBoost</h1>
+        <p class="banner-subtitle">Les meilleures astuces et guides pour progresser sur Fortnite</p>
+        <nav class="banner-nav">
+          <a href="accueil.html">Accueil</a>
+          <a href="equipement.html">Equipement pro Fortnite</a>
+          <a href="map.html">Carte Fortnite</a>
+          <div class="dropdown">
+            <button class="btn" aria-haspopup="true" aria-expanded="false" onclick="toggleMenu()">Top 10 ▼</button>
+            <div class="menu-pioches" style="text-align:left; font-family:Arial,sans-serif; font-weight:bold;">
+              <a href="pioche.html">Pioches</a>
+              <a href="sac_a_dos.html">Sac à dos</a>
+              <a href="planeur.html">Planeur</a>
+              <a href="skin.html">Skin</a>
+              <a href="danse.html" style="display:block; padding:10px 18px;">Danses</a>
+            </div>
+          </div>
+          <a href="quiz.html">Quiz</a>
+          <a href="pseudo.html" style="color:#61dafb; margin: 0 15px; text-decoration:none; font-weight:bold;">Pseudo</a>
+          <a href="mention.html" class="btn" style="margin: 0 8px;">Mentions légales et confidentialité</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <h2 style="text-align:center; margin-bottom:30px; font-size:1.6rem;">Équipement Pro Fortnite</h2>
+<div class="filters" style="text-align: center; margin-bottom: 30px;">
+  <button class="filter-btn" data-filter="all">Tout</button>
+  <button class="filter-btn" data-filter="manette">Manettes</button>
+  <button class="filter-btn" data-filter="ecran">Écrans</button>
+  <button class="filter-btn" data-filter="souris">Souris</button>
+  <button class="filter-btn" data-filter="clavier">Claviers</button>
+  <button class="filter-btn" data-filter="chaise">Chaises</button>
+  <button class="filter-btn" data-filter="casque">Casques</button>
+  <button class="filter-btn" data-filter="manchette">Manchettes</button>
+  <button class="filter-btn" data-filter="tapis">Tapis de souris</button>
+</div>
+
+  <div class="equip-list">
+  <style>
+    .banner {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    background: #20232a;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.18);
+    padding: 0;
+    z-index: 100;
+    margin-bottom: 38px;
+    min-height: 170px; /* Taille similaire à la page accueil */
+    display: flex;
+    align-items: center;
+  }
+  .banner-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 32px 0 0;
+    min-height: 170px; /* Taille similaire à la page accueil */
+  }
+  .banner-logo {
+    height: 90px;
+    margin-right: 32px;
+    margin-left: 16px;
+    flex-shrink: 0;
+  }
+    .banner-center {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .banner-title {
+      margin: 0;
+      font-size: 2.5rem;
+      color: #61dafb;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      letter-spacing: 2px;
+      text-align: center;
+    }
+    .banner-subtitle {
+      font-size: 1.15rem;
+      color: #ccc;
+      margin: 8px 0 0 0;
+      text-align: center;
+    }
+    .banner-nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 18px;
+      background: none;
+      padding: 10px 0 0 0;
+      margin-top: 8px;
+    }
+    .banner-nav a {
+      color: #61dafb;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      padding: 0 8px;
+      transition: color 0.2s;
+    }
+    .banner-nav a:hover {
+      color: #fff;
+      text-shadow: 0 0 8px #0f73ff;
+    }
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown button {
+      background: none;
+      border: none;
+      color: #61dafb;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      padding: 0 8px;
+    }
+    .menu-pioches {
+      display: none;
+      position: absolute;
+      left: 0;
+      top: 100%;
+      background: #20232a;
+      min-width: 180px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+      border-radius: 8px;
+      z-index: 10;
+    }
+    .menu-pioches.show {
+      display: block !important;
+    }
+    .menu-pioches a {
+      display: block;
+      color: #61dafb;
+      padding: 10px 18px;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+    .menu-pioches a:hover {
+      background: #0f73ff;
+      color: #fff;
+      box-shadow: 0 0 12px 2px #0f73ff, 0 0 4px #0f73ff;
+      text-shadow: 0 0 8px #0f73ff;
+      z-index: 20;
+    }
+    /* Désactivation du hover natif pour éviter conflit avec JS */
+    /* .dropdown:hover .menu-pioches,
+    .dropdown:focus-within .menu-pioches {
+      display: block;
+    } */
+    @media (max-width: 900px) {
+      .banner-content {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 8px;
+        min-height: 100px;
+        
+      }
+      .banner-logo {
+        margin: 0 0 12px 0;
+        height: 70px;
+      }
+      .banner-title {
+        font-size: 2rem;
+      }
+      .banner-subtitle {
+        font-size: 1rem;
+      }
+      .banner-nav {
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .guide {
+        flex-direction: column !important;
+        gap: 16px !important;
+      }
+      header h1, .banner-title {
+        font-size: 1.8rem !important;
+      }
+      nav a, .banner-nav a {
+        display: block !important;
+        margin: 6px auto !important;
+      }
+    }
+  </style>
+
+  <script>
+  const btnPioches = document.querySelector('nav button');
+  const menuPioches = document.querySelector('.menu-pioches');
+
+  if (btnPioches && menuPioches) {
+    let isHovered = false;
+
+    btnPioches.addEventListener('mouseenter', () => {
+      isHovered = true;
+      menuPioches.style.display = 'block';
+    });
+
+    btnPioches.addEventListener('mouseleave', () => {
+      setTimeout(() => {
+        if (!isHovered) menuPioches.style.display = 'none';
+      }, 150);
+    });
+
+    menuPioches.addEventListener('mouseenter', () => {
+      isHovered = true;
+      menuPioches.style.display = 'block';
+    });
+
+    menuPioches.addEventListener('mouseleave', () => {
+      isHovered = false;
+      menuPioches.style.display = 'none';
+    });
+
+    // Toggle menu on click (mobile)
+    btnPioches.addEventListener('click', () => {
+      const isVisible = menuPioches.style.display === 'block';
+      menuPioches.style.display = isVisible ? 'none' : 'block';
+    });
+  }
+</script>
+  
+
+    <div class="equip-item manette">
+      <img src="https://m.media-amazon.com/images/I/71KV2R3t+6L._AC_SL1500_.jpg" alt="Super Shotgun" />
+      <h3>Manette Scuf gaming</h3>
+      <p>Manette personnalisée conçue pour les joueurs pro, offrant des palettes arrière programmables, une meilleure prise en main et des boutons réactifs pour améliorer la vitesse et la précision en jeu.</p>
+      <a href="https://www.amazon.fr/SCUF-ENVISION-Contr%C3%B4leur-Seulement-Sans/dp/B0CM728YPY/?tag=googshopfr-21" target="_blank" 
+      rel="noopener noreferrer"
+      style="display:inline-block; margin-top:10px; padding:8px 12px; background:#0f73ff; color:white; text-decoration:none; border-radius:4px;">Acheter sur Amazon</a>
+     </a>
+    </div>
+     <div class="equip-item manette">
+      <img src="https://m.media-amazon.com/images/I/610e9YjQMRL._AC_SL1500_.jpg"  />
+      <h3>Playstation Sony, Manette DualSense Edge Officielle</h3>
+      <p>Manette sans fil ultra-personnalisable pour PlayStation 5 avec profils interchangeables, commandes avancées, confort amélioré et boîte de transport incluse. Couleur noire élégante.</p>
+      <a href="https://www.amazon.fr/Playstation-DualSense-Officielle-Ultra-Personnalisables-Interchangeables/dp/B0DSPX3R62/ref=sr_1_11?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=3OOLSMXMFQTMH&dib=eyJ2IjoiMSJ9.212E0HH0MSjVXK96thPJL37Y4oum4RGKAUzSpxBFzemHLmUTapzo_5iLHsX0xFaQj335vowWg0ZKSZNQdh6yx-_t52nWd4mEx6eLAbGzVCLrzNYsXYehrXvQ2KgcN47sM233QL1mpprJzlPHIJnKu4NUuWfJN-y5rRXGHJZvulTK3P-yhOt9mhSzzCMqDnXxVThr-1eHfVPKmOaFEHxuORPA7RWClL6tLAHmL_G7eytTfKcAR7mD_G8FTia4Va_rNMkSvBIz66X2WCuJS0gWHwowgzRjTrPNPeZpiz7u9L0.5MyOfSAcMtcPflc5aystZiexdBPfy3eVyxap6gs41ik&dib_tag=se&keywords=manette%2Bps5&qid=1753381399&sprefix=manette%2Bps5%2Caps%2C98&sr=8-11&th=1" target="_blank" 
+      rel="noopener noreferrer"
+      style="display:inline-block; margin-top:10px; padding:8px 12px; background:#0f73ff; color:white; text-decoration:none; border-radius:4px;">Acheter sur Amazon</a>
+     </a>
+    </div>
+    <div class="equip-item manette">
+      <img src="https://m.media-amazon.com/images/I/71UJ0JtK1RL._AC_SL1500_.jpg" alt="Super Shotgun" />
+      <h3>HEXGAMING Phantom Pro Manette</h3>
+      <p>Manette avancée pour PS5 avec 4 palettes, 8 joysticks analogiques Hall Effect, gâchettes réglables, et 6 profils de remappage. Compatible PC et mobile. Modèle Orochi.</p>
+      <a href="https://www.amazon.fr/HEXGAMING-Analogique-Controller-Compatible-Mobile-Orochi/dp/B0DX274LC9/ref=sr_1_1_sspa?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=3OOLSMXMFQTMH&dib=eyJ2IjoiMSJ9.212E0HH0MSjVXK96thPJL37Y4oum4RGKAUzSpxBFzemHLmUTapzo_5iLHsX0xFaQj335vowWg0ZKSZNQdh6yx-_t52nWd4mEx6eLAbGzVCLrzNYsXYehrXvQ2KgcN47sM233QL1mpprJzlPHIJnKu4NUuWfJN-y5rRXGHJZvulTK3P-yhOt9mhSzzCMqDnXxVThr-1eHfVPKmOaFEHxuORPA7RWClL6tLAHmL_G7eytTfKcAR7mD_G8FTia4Va_rNMkSvBIz66X2WCuJS0gWHwowgzRjTrPNPeZpiz7u9L0.5MyOfSAcMtcPflc5aystZiexdBPfy3eVyxap6gs41ik&dib_tag=se&keywords=manette+ps5&qid=1753381399&sprefix=manette+ps5%2Caps%2C98&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1" target="_blank" 
+      rel="noopener noreferrer"
+      style="display:inline-block; margin-top:10px; padding:8px 12px; background:#0f73ff; color:white; text-decoration:none; border-radius:4px;">Acheter sur Amazon</a>
+     </a>
+    </div>
+    <div class="equip-item manette">
+      <img src="https://m.media-amazon.com/images/I/71IY05v1DyL._AC_SL1500_.jpg" alt="Super Shotgun" />
+      <h3>HEXGAMING PHANTOM Pro Manette</h3>
+      <p>Manette haut de gamme pour PS5 dotée de 4 palettes et 8 joysticks analogiques Hall Effect ultra-précis. Profitez de gâchettes personnalisables et de 6 profils de remappage configurables pour un gameplay sur-mesure. Compatible PC et mobile, cette manette offre une expérience polyvalente et immersive.</p>
+      <a href="https://www.amazon.fr/HEXGAMING-Analogique-Controller-Compatible-Mobile-Noir/dp/B0DHGWDJ6P/ref=sr_1_3_sspa?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=3OOLSMXMFQTMH&dib=eyJ2IjoiMSJ9.212E0HH0MSjVXK96thPJL37Y4oum4RGKAUzSpxBFzemHLmUTapzo_5iLHsX0xFaQj335vowWg0ZKSZNQdh6yx-_t52nWd4mEx6eLAbGzVCLrzNYsXYehrXvQ2KgcN47sM233QL1mpprJzlPHIJnKu4NUuWfJN-y5rRXGHJZvulTK3P-yhOt9mhSzzCMqDnXxVThr-1eHfVPKmOaFEHxuORPA7RWClL6tLAHmL_G7eytTfKcAR7mD_G8FTia4Va_rNMkSvBIz66X2WCuJS0gWHwowgzRjTrPNPeZpiz7u9L0.5MyOfSAcMtcPflc5aystZiexdBPfy3eVyxap6gs41ik&dib_tag=se&keywords=manette+ps5&qid=1753381399&sprefix=manette+ps5%2Caps%2C98&sr=8-3-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1" target="_blank" 
+      rel="noopener noreferrer"
+      style="display:inline-block; margin-top:10px; padding:8px 12px; background:#0f73ff; color:white; text-decoration:none; border-radius:4px;">Acheter sur Amazon</a>
+     </a>
+    </div>
+
+   <div class="equip-item clavier">
+      <img src="https://m.media-amazon.com/images/I/719h65mTOEL._AC_SX679_.jpg"/>
+      <h3>Clavier Apex Pro TKL</h3>
+      <p>Clavier mécanique compact sans pavé numérique, avec switches ultra-rapides et réglables, rétroéclairage RGB personnalisable, idéal pour les gamers recherchant précision et rapidité.</p>
+      <a href="https://www.amazon.fr/SteelSeries-Apex-Pro-HyperMagnetic-D%C3%A9clenchement/dp/B0DFHD4435/?tag=googshopfr-21" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      style="display:inline-block; margin-top:10px; padding:8px 12px; background:#0f73ff; color:white; text-decoration:none; border-radius:4px;">
+     Acheter sur Amazon
+     </a>
+    </div>
+   <div class="equip-item clavier">
+      <img src="https://m.media-amazon.com/images/I/71XYTFum3UL._AC_SL1500_.jpg"/>
+      <h3>SteelSeries Clavier HyperMagnetic gaming Apex Pro Mini</h3>
+      <p>Clavier compact 60 % avec actionnement ajustable pour une réactivité optimale. Touches PBT durables, éclairage RVB personnalisable et connexion USB-C pour une performance pro et un style épuré.</p>
+      <a href="https://www.amazon.fr/SteelSeries-Apex-Pro-Mini-Actionnement/dp/B0B2X26TD3/ref=sr_1_2_sspa?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=23RBF6J8CM60T&dib=eyJ2IjoiMSJ9.PqBO9NoSMLBzIuY1oXLsl-YXsA0jjN_my7TXFXuxEououhyDwWtMqaCepEn9UGB8t0cPD8ew9D9DzJ6rDsZvZfwHm2aCx1bcN0HKtwBm0LKyXdSA5e9XggVmcYRTtqZ6wiFkSn_C27Nzwv_BmY9rFuYbb5d-MTcDml-VAPSTeVcKCg4jrBA0u4ShjA2PDdKJbCqXkl_r1Iy1ax7htXk_VBNaO59oBQcSBqYaYhQauiCJlX4kXkZhE83CKanedPdZEPlJYN_blTaVssrG9sh005LK9rzAkqu9PTrlEihPRpg.wwQjG1VILH0TbD0bfWeeN06nHnc5HCPbFnpccPnpoJk&dib_tag=se&keywords=clavier%2Bgaming&qid=1753382063&sprefix=clavier%2Bgaming%2Caps%2C97&sr=8-2-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      style="display:inline-block; margin-top:10px; padding:8px 12px; background:#0f73ff; color:white; text-decoration:none; border-radius:4px;">
+     Acheter sur Amazon
+     </a>
+    </div>
+     <div class="equip-item clavier">
+      <img src="https://m.media-amazon.com/images/I/61H+TyJRpiL._AC_SL1500_.jpg"/>
+      <h3>The G-Lab Keyz Hydrogen</h3>
+      <p>Clavier filaire AZERTY compact TKL, idéal pour les espaces réduits. Rétroéclairage multicolore pour une ambiance personnalisée et touches silencieuses pour un confort de jeu optimal.</p>
+      <a href="https://www.amazon.fr/G-Lab-Semi-m%C3%A9canique-R%C3%A9tro%C3%A9clairage-Multicolore-Silencieux/dp/B0CLYRQV69/ref=sxin_14_pa_sp_search_thematic_sspa?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&content-id=amzn1.sym.b772482c-63e4-4eb4-a1c6-4190add0a415%3Aamzn1.sym.b772482c-63e4-4eb4-a1c6-4190add0a415&crid=23RBF6J8CM60T&cv_ct_cx=clavier%2Bgaming&keywords=clavier%2Bgaming&pd_rd_i=B0CLYRQV69&pd_rd_r=e0c3d785-213c-45c2-84ef-16a0ad5fa5d4&pd_rd_w=t3fD2&pd_rd_wg=B8hpv&pf_rd_p=b772482c-63e4-4eb4-a1c6-4190add0a415&pf_rd_r=0C4WVYMDAX0PRAAG6PF2&qid=1753382063&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sprefix=clavier%2Bgaming%2Caps%2C97&sr=1-2-86ee67e3-2ea6-4725-8419-71cfe38eb657-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWM&th=1" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      style="display:inline-block; margin-top:10px; padding:8px 12px; background:#0f73ff; color:white; text-decoration:none; border-radius:4px;">
+     Acheter sur Amazon
+     </a>
+    </div>
+    <div class="equip-item clavier">
+      <img src="https://m.media-amazon.com/images/I/61HzD+Ezx6L._AC_SL1500_.jpg"/>
+      <h3>RK ROYAL KLUDGE R75 </h3>
+      <p>Clavier compact TKL (75%) en disposition AZERTY français, avec montage Gasket pour une meilleure sensation tactile. Rétroéclairage RVB personnalisable, fonction Hot Swap pour changer facilement les switches, compatible QMK/Via pour une personnalisation avancée, touches PBT durables, et molette (knob) multifonctionnelle.</p>
+      <a href="https://www.amazon.fr/RK-ROYAL-KLUDGE-R75-M%C3%A9canique/dp/B0D3GZYN1P/ref=sxin_14_pa_sp_search_thematic_sspa?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&content-id=amzn1.sym.b772482c-63e4-4eb4-a1c6-4190add0a415%3Aamzn1.sym.b772482c-63e4-4eb4-a1c6-4190add0a415&crid=23RBF6J8CM60T&cv_ct_cx=clavier+gaming&keywords=clavier+gaming&pd_rd_i=B0D3GZYN1P&pd_rd_r=e0c3d785-213c-45c2-84ef-16a0ad5fa5d4&pd_rd_w=t3fD2&pd_rd_wg=B8hpv&pf_rd_p=b772482c-63e4-4eb4-a1c6-4190add0a415&pf_rd_r=0C4WVYMDAX0PRAAG6PF2&qid=1753382063&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sprefix=clavier+gaming%2Caps%2C97&sr=1-4-86ee67e3-2ea6-4725-8419-71cfe38eb657-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWM&psc=1" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      style="display:inline-block; margin-top:10px; padding:8px 12px; background:#0f73ff; color:white; text-decoration:none; border-radius:4px;">
+     Acheter sur Amazon
+     </a>
+    </div>
+
+    <div class="equip-item souris">
+      <img src="https://demolinux.org/wp-content/uploads/2020/07/souris-gamer-logitech.jpg" alt="Small Shield Potion" />
+      <h3>Logitech G502 Hero</h3>
+      <p>Souris gaming ultra-précise avec capteur 25 000 DPI, poids ajustables et 11 boutons programmables. Conçue pour la performance et la réactivité, idéale pour les joueurs compétitifs.</p>
+      <a href="https://www.amazon.fr/dp/B07GS6ZB7T?tag=googshopfr-21" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      style="display:inline-block; margin-top:10px; padding:8px 12px; background:#0f73ff; color:white; text-decoration:none; border-radius:4px;">
+     Acheter sur Amazon
+     </a>
+    </div>
+    <div class="equip-item souris">
+      <img src="https://m.media-amazon.com/images/I/61zqxqvq+3L._AC_SL1500_.jpg" alt="Small Shield Potion" />
+      <h3>Razer Viper V3 HyperSpeed</h3>
+      <p>Souris gaming ambidextre ultra-légère avec technologie sans fil HyperSpeed pour une latence ultra-faible. Capteur optique haute précision, boutons tactiles rapides, design ergonomique pour un confort optimal pendant les longues sessions de jeu, et éclairage RGB personnalisable.</p>
+      <a href="https://www.amazon.fr/Razer-Viper-HyperSpeed-dAutonomie-M%C3%A9caniques/dp/B0CBCPB2T1/ref=sr_1_1_sspa?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1KHMWRLNHJVNG&dib=eyJ2IjoiMSJ9.YpZv4TS9bX7IKiZ3wotjjKgOaq_P9n_97MYrXofk2fd5F8pSNva46ZhHKByYR6dFQEOTnfm11VuzGG4ggWyidXeVbZ8QYG8q_o_9E1uR25nxesS-GEneGTKkBO8mxK3ti0dt0p9shgnoZod1ClZMsJz_seGnDheeOnpN4GQSFA-cDuVKom18OmB1VlCcKVc6Dq7CvyxeMIR3A0a-UlkzKPS6agXuDxP0WeEtehzeQrO_VnuE5_mdBF3mtq05XIrVaBfmH5iFuC0M5dOXPZdguq8HAq2h-rc_z8ZMrqPdJag.yJTEezQDAXOMph4OOVud_bvN2XjfZQmcnBRgqyYoR48&dib_tag=se&keywords=souris%2Bgaming&qid=1753382407&s=computers&sprefix=souris%2Bgaming%2Ccomputers%2C95&sr=1-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      style="display:inline-block; margin-top:10px; padding:8px 12px; background:#0f73ff; color:white; text-decoration:none; border-radius:4px;">
+     Acheter sur Amazon
+     </a>
+    </div>
+    <div class="equip-item souris">
+      <img src="https://m.media-amazon.com/images/I/61nXuiyHeGL._AC_SL1500_.jpg" alt="Small Shield Potion" />
+      <h3>ATTACK SHARK X11SE</h3>
+      <p>Souris sans fil ergonomique avec capteur optique haute performance, 6 boutons programmables, DPI réglable, rétroéclairage RGB dynamique et design confortable pour les longues sessions de jeu.</p>
+      <a href="https://www.amazon.fr/ATTACK-SHARK-X11SE-Ultra-l%C3%A9g%C3%A8re-Batterie/dp/B0FBFN43G3/ref=sr_1_11?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1KHMWRLNHJVNG&dib=eyJ2IjoiMSJ9.YpZv4TS9bX7IKiZ3wotjjKgOaq_P9n_97MYrXofk2fd5F8pSNva46ZhHKByYR6dFQEOTnfm11VuzGG4ggWyidXeVbZ8QYG8q_o_9E1uR25nxesS-GEneGTKkBO8mxK3ti0dt0p9shgnoZod1ClZMsJz_seGnDheeOnpN4GQSFA-cDuVKom18OmB1VlCcKVc6Dq7CvyxeMIR3A0a-UlkzKPS6agXuDxP0WeEtehzeQrO_VnuE5_mdBF3mtq05XIrVaBfmH5iFuC0M5dOXPZdguq8HAq2h-rc_z8ZMrqPdJag.yJTEezQDAXOMph4OOVud_bvN2XjfZQmcnBRgqyYoR48&dib_tag=se&keywords=souris%2Bgaming&qid=1753382407&s=computers&sprefix=souris%2Bgaming%2Ccomputers%2C95&sr=1-11&th=1" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      style="display:inline-block; margin-top:10px; padding:8px 12px; background:#0f73ff; color:white; text-decoration:none; border-radius:4px;">
+     Acheter sur Amazon
+     </a>
+    </div>
+    <div class="equip-item souris">
+      <img src="https://m.media-amazon.com/images/I/51SYVKjoMnL._AC_SL1500_.jpg" alt="Small Shield Potion" />
+      <h3>ATTACK SHARK R1 Souris Superlight</h3>
+      <p>Souris sans fil 3 modes (USB-C, 2.4 GHz, Bluetooth) avec capteur 18 000 DPI, design ergonomique ultra-léger, switches durables et molette précise. Idéale pour le gaming rapide et précis.</p>
+      <a href="https://www.amazon.fr/ATTACK-SHARK-Superlight-r%C3%A9glables-Batterie/dp/B0CP4PJYNQ/ref=sr_1_14_sspa?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1KHMWRLNHJVNG&dib=eyJ2IjoiMSJ9.YpZv4TS9bX7IKiZ3wotjjKgOaq_P9n_97MYrXofk2fd5F8pSNva46ZhHKByYR6dFQEOTnfm11VuzGG4ggWyidXeVbZ8QYG8q_o_9E1uR25nxesS-GEneGTKkBO8mxK3ti0dt0p9shgnoZod1ClZMsJz_seGnDheeOnpN4GQSFA-cDuVKom18OmB1VlCcKVc6Dq7CvyxeMIR3A0a-UlkzKPS6agXuDxP0WeEtehzeQrO_VnuE5_mdBF3mtq05XIrVaBfmH5iFuC0M5dOXPZdguq8HAq2h-rc_z8ZMrqPdJag.yJTEezQDAXOMph4OOVud_bvN2XjfZQmcnBRgqyYoR48&dib_tag=se&keywords=souris%2Bgaming&qid=1753382407&s=computers&sprefix=souris%2Bgaming%2Ccomputers%2C95&sr=1-14-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9tdGY&th=1" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      style="display:inline-block; margin-top:10px; padding:8px 12px; background:#0f73ff; color:white; text-decoration:none; border-radius:4px;">
+     Acheter sur Amazon
+     </a>
+    </div>
+
+    <div class="equip-item ecran">
+      <img src="https://m.media-amazon.com/images/I/71xfsL+lJfL._AC_SL1500_.jpg"  />
+      <h3>KTC 27'' Ecran PC Gamer Incurvé</h3>
+      <p>Écran incurvé ultra-fluide avec 240Hz et 1ms, résolution QHD 2K, couleurs vives, et technologies FreeSync/G-Sync pour un gaming sans accroc. Confort visuel avec réduction lumière bleue.</p>
+      <a href="https://www.amazon.fr/dp/B0DWMNWJFL?tag=googshopfr-21" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      style="display:inline-block; margin-top:10px; padding:8px 12px; background:#0f73ff; color:white; text-decoration:none; border-radius:4px;">
+     Acheter sur Amazon
+     </a>
+    </div>
+     <div class="equip-item ecran">
+      <img src="https://m.media-amazon.com/images/I/81OQ7qUL7bL._AC_SL1500_.jpg"  />
+      <h3>Alienware AW2725QF 27</h3>
+      <p>Écran IPS ultra-fluide avec double mode 4K UHD 180 Hz ou Full HD 360 Hz. Temps de réponse ultra-rapide (0,5 ms), compatibilité G-Sync/FreeSync, HDR600, connectique complète (HDMI 2.1, DisplayPort, USB-C). Parfait pour le gaming immersif ou compétitif.</p>
+      <a href="https://www.amazon.fr/Alienware-AW2725QF-3840x2160-Compatible-DisplayPort/dp/B0DG9BWZHK/ref=sr_1_1_sspa?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=3P3BT54CY62CN&dib=eyJ2IjoiMSJ9.mT5a-5OPRbwRNHi8wtWB6HCY2jd3YvK81NIbm9iBSyMthYobVsSZejpARKeoZ-PkmknsFLpSgYNQABY3S-HmOqQS3LAqZJYk_JHTQpX9YNWrFvNBJmO5xqY5isSGS72aF7F84XYSs9xf7uq0KywfCC4UNlu-ooiX4_1_lOMPXjxCahOndU_rlHZAMBH2JORtXSKqSsm5In2dThwqpNZW23sPKobXroyRs33eOWJOPLxo9Il8SR_q6sHLyx-oGYgqaiPQI9ocCN79o0rVjtoi9wZ91l8BfZXRaKMEbPdICA4.o6B4RbClYk4VVWfeJnJCIVCp5l3GOtyepb0GKZr3lmU&dib_tag=se&keywords=%C3%89cran%2Bde%2Bgaming%2Bdouble%2Br%C3%A9solution%2B4K%2BAlienware%2B27%2B-%2BAW2725QF&qid=1753382856&s=computers&sprefix=%C3%A9cran%2Bde%2Bgaming%2Bdouble%2Br%C3%A9solution%2B4k%2Balienware%2B27%2B-%2Baw2725qf%2Ccomputers%2C79&sr=1-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      style="display:inline-block; margin-top:10px; padding:8px 12px; background:#0f73ff; color:white; text-decoration:none; border-radius:4px;">
+     Acheter sur Amazon
+     </a>
+    </div>
+    <div class="equip-item ecran">
+      <img src="https://m.media-amazon.com/images/I/71S3dsGafhL._AC_SL1500_.jpg"  />
+      <h3>Lenovo Legion R27qe</h3>
+      <p>Écran IPS QHD (2560×1440) avec fréquence ultra-fluide de 180 Hz et temps de réponse rapide de 0,5 ms MPRT. Compatible AMD FreeSync, il dispose de réglages complets (inclinaison, hauteur, pivot), et inclut câbles DisplayPort et HDMI pour une installation flexible.</p>
+      <a href="https://www.amazon.fr/Lenovo-Legion-R27Fc-30-Display-W128826928/dp/B0D6GS78KW/ref=sr_1_4?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=CU6VKNOQJWZO&dib=eyJ2IjoiMSJ9.oWAuqxj4WcBosFbRiYoKIgtk_XS3eCeGi9kMJHTBPPgDs_L-KYjQX5KHSszP-degozl9hz0OAAhpwsarEsQTv7XShUNwxlRMbHj1fist53jlr-uVkLCkzvf1zyiPPO8DTCcocb34TXFRmR9FVDlUcbEXdfnq-Q4HYaRQc8PEFGeUXiuVfv_1Up5uSzlZQJ6grByCI7JUr_TpXdVVrDEAiBSqwP0hCiWav-H_vk95fcY-D_Y43_-BMH9HQTE-R7VGz1dQIWDygkkNnYMojxE1ZeC_MJgjN_euHE-MNeB9AfI.HZoDnvBopcAuUsqzyaxubUgf-sAaV3r6aOygUi1n9Yg&dib_tag=se&keywords=%C3%89cran%2BLenovo%2BLegion%2BR27fc-30%2BFHD%2BCurved%2BPro%2BGaming%2B(27%22)&qid=1753383042&s=computers&sprefix=%C3%A9cran%2Blenovo%2Blegion%2Br27fc-30%2Bfhd%2Bcurved%2Bpro%2Bgaming%2B27%22%2B%2Ccomputers%2C126&sr=1-4&th=1" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      style="display:inline-block; margin-top:10px; padding:8px 12px; background:#0f73ff; color:white; text-decoration:none; border-radius:4px;">
+     Acheter sur Amazon
+     </a>
+    </div>  
+    <div class="equip-item ecran">
+      <img src="https://m.media-amazon.com/images/I/713vF2yjiSL._AC_SL1500_.jpg"  />
+      <h3>Samsung Ecran PC Odyssey G5</h3>
+      <p>Écran VA incurvé 27″ en résolution 2560×1440 (QHD), avec un taux de rafraîchissement jusqu’à 144 Hz (ou 165 Hz selon modèles) et un temps de réponse de 1 ms (MPRT). Compatible AMD FreeSync Premium pour un affichage fluide et sans tearing 
+</p>
+      <a href="https://www.amazon.fr/Samsung-Ecran-Odyssey-165Hz-Incurv%C3%A9e/dp/B0CP687WQK/ref=sr_1_2_mod_primary_new?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=Q9C3MABUMA2Q&dib=eyJ2IjoiMSJ9.m7saxSrAVaqMEWap9DcmUFlKbaG8C5M8UEYJ96XQ6ZjdaJVhT-iOHrvNAE6rTx4QwyyXACK6dmycV2AwRrUx_SnwdTtlKfgN3rU_ypTp3tXxgm4c7Q9nFE-oXe40NrXymOCkKuuKDuZZvCe474m6jng2OPd4TRDrWHYMif4VOyDNy0PdYoDa_5Y_4ommH_dvHJahkwy2y9FCU59XWQ3-Mop27llnvG9FvxvrHJTMNLLTra-6FIwqymIIQZx9FQcFwK5Hbt0ZgS28gFAPlNnxVn6I_kwPx8CEVq-BfYdEaGY.zqxNwzMncfHE-oGGepNl6xIZHaWTYpA3-pRpbitqBwY&dib_tag=se&keywords=samsung+g5&qid=1753383357&s=computers&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sprefix=samsung+g5%2Ccomputers%2C97&sr=1-2" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      style="display:inline-block; margin-top:10px; padding:8px 12px; background:#0f73ff; color:white; text-decoration:none; border-radius:4px;">
+     Acheter sur Amazon
+     </a>
+    </div>  
+
+    <div class="equip-item casque">
+      <img src="https://m.media-amazon.com/images/I/71ltsViEA8L._AC_SL1500_.jpg" />
+      <h3>Casque HyperX Cloud II</h3>
+      <p>Le Cloud 2 est un casque filaire de haute qualité conçu pour le gaming. Il se distingue par sa construction robuste en aluminium, ses écouteurs circumauraux en mousse à mémoire de forme recouverts de simili‑cuir, et une télécommande USB avec activation du son surround 7.1</p>
+      <a href="https://www.amazon.fr/HyperX-Cloud-Casque-Gaming-Mobile/dp/B00SAYCXWG/?tag=googshopfr-21" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      style="display:inline-block; margin-top:10px; padding:8px 12px; background:#0f73ff; color:white; text-decoration:none; border-radius:4px;">
+     Acheter sur Amazon
+     </a>
+    </div>
+    <div class="equip-item casque">
+      <img src="https://m.media-amazon.com/images/I/81APVcnj-EL._AC_SL1500_.jpg" />
+      <h3>Turtle Beach Recon 50X</h3>
+      <p>Casque stéréo léger avec écouteurs de 40 mm à aimants néodyme, micro amovible haute sensibilité, et commandes volume/micro intégrées. Compatible avec Xbox One, Xbox Series X|S, PS4/PS5, PC, Mac et appareils mobiles via prise 3,5 mm.</p>
+      <a href="https://www.amazon.fr/Casque-gaming-Recon-Turtle-Beach/dp/B00YXO5U40/ref=sr_1_16?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=BCCNQZB93R7U&dib=eyJ2IjoiMSJ9.i7z54EXevHtdMLqnQl65zqCxCFrIK6i3rjjU5lzq3QpG_25O1EuEcY0oePq7Kmk3BRxK6oGk4KKIdOawQhzXyOM8TKQ548b7tGUInJixUBjmo8t4RRMuBPu9LyA-3nnAulXFiHEuxHfSktncaxGk8w99eeWzXwDfQCYuV25CA28uww2m4eXchOyGIpsiKPTvXE-5xZ7oZRvjORW9RRcE6xpB8QoQhlyq_2oY5oiNT5x_TKO3xvDxIIjbTxgFp-4ieIR-Euyu1FWwPpxjzya0-x7gjyUSZRwlvJCysunhBSc.anixJuUCt0EvSv3UbdhchhgciNAWhDt488gJdYkhqL4&dib_tag=se&keywords=casque%2Bgaming&qid=1753439554&sprefix=casque%2Bgaming%2Caps%2C98&sr=8-16&th=1" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      style="display:inline-block; margin-top:10px; padding:8px 12px; background:#0f73ff; color:white; text-decoration:none; border-radius:4px;">
+     Acheter sur Amazon
+     </a>
+    </div>
+    <div class="equip-item casque">
+      <img src="https://m.media-amazon.com/images/I/81bQEkMevBL._AC_SL1500_.jpg" />
+      <h3>Logitech G435 LIGHTSPEED </h3>
+      <p>Casque sans fil ultra léger avec double connectivité LIGHTSPEED USB (2.4 GHz) et Bluetooth, offrant jusqu’à 18 h d’autonomie. Équipé de dual microphones beamforming intégrés pour une voix claire sans bras de micro, pilotes audio haute fidélité de 40 mm compatibles Dolby Atmos, Tempest 3D AudioTech et Windows Sonic, conçu pour un confort prolongé grâce à sa mousse à mémoire de forme lavable. Conçu avec au moins 22 % de plastique recyclé, il est également certifié carbon neutral.</p>
+      <a href="https://www.amazon.fr/Logitech-LIGHTSPEED-Bluetooth-Casque-Gaming/dp/B07W7LNTM5/ref=sr_1_13?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=BCCNQZB93R7U&dib=eyJ2IjoiMSJ9.i7z54EXevHtdMLqnQl65zqCxCFrIK6i3rjjU5lzq3QpG_25O1EuEcY0oePq7Kmk3BRxK6oGk4KKIdOawQhzXyOM8TKQ548b7tGUInJixUBjmo8t4RRMuBPu9LyA-3nnAulXFiHEuxHfSktncaxGk8w99eeWzXwDfQCYuV25CA28uww2m4eXchOyGIpsiKPTvXE-5xZ7oZRvjORW9RRcE6xpB8QoQhlyq_2oY5oiNT5x_TKO3xvDxIIjbTxgFp-4ieIR-Euyu1FWwPpxjzya0-x7gjyUSZRwlvJCysunhBSc.anixJuUCt0EvSv3UbdhchhgciNAWhDt488gJdYkhqL4&dib_tag=se&keywords=casque%2Bgaming&qid=1753439554&sprefix=casque%2Bgaming%2Caps%2C98&sr=8-13&th=1" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      style="display:inline-block; margin-top:10px; padding:8px 12px; background:#0f73ff; color:white; text-decoration:none; border-radius:4px;">
+     Acheter sur Amazon
+     </a>
+    </div>
+    <div class="equip-item casque">
+      <img src="https://m.media-amazon.com/images/I/71-0d2CTMML._AC_SL1500_.jpg" />
+      <h3>Beyerdynamic DT 990 PRO  </h3>
+      <p>Casque filaire haut de gamme fabriqué en Allemagne, conçu pour le monitoring et l’écoute critique. Son design ouvert offre une excellente spatialisation, avec des aigus précis et des basses bien détaillées, sur une plage de 5 Hz à 35 kHz.Doté de coussinets en velours ultra‑confortables, d’un arceau réglable en acier à ressorts, d’un câble spirale de 3 m et d’un adaptateur jack 6,35 mm, il allie confort de longue durée et robustesse.</p>
+      <a href="https://www.amazon.fr/beyerdynamic-990-PRO-casque-studio/dp/B0011UB9CQ/ref=sr_1_5_sspa?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=BCCNQZB93R7U&dib=eyJ2IjoiMSJ9.i7z54EXevHtdMLqnQl65zqCxCFrIK6i3rjjU5lzq3QpG_25O1EuEcY0oePq7Kmk3BRxK6oGk4KKIdOawQhzXyOM8TKQ548b7tGUInJixUBjmo8t4RRMuBPu9LyA-3nnAulXFiHEuxHfSktncaxGk8w99eeWzXwDfQCYuV25CA28uww2m4eXchOyGIpsiKPTvXE-5xZ7oZRvjORW9RRcE6xpB8QoQhlyq_2oY5oiNT5x_TKO3xvDxIIjbTxgFp-4ieIR-Euyu1FWwPpxjzya0-x7gjyUSZRwlvJCysunhBSc.anixJuUCt0EvSv3UbdhchhgciNAWhDt488gJdYkhqL4&dib_tag=se&keywords=casque%2Bgaming&qid=1753439554&sprefix=casque%2Bgaming%2Caps%2C98&sr=8-5-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      style="display:inline-block; margin-top:10px; padding:8px 12px; background:#0f73ff; color:white; text-decoration:none; border-radius:4px;">
+     Acheter sur Amazon
+     </a>
+    </div>
+
+    <div class="equip-item chaise">
+      <img src="https://m.media-amazon.com/images/I/61rvHv4Uu6L._AC_SL1482_.jpg" />
+      <h3>AutoFull M6 Chaise Gaming</h3>
+      <p>Chaise gaming AutoFull M6, design ergonomique avec support lombaire et appui-tête réglables, rembourrage confortable, matériau en cuir PU durable, idéale pour longues sessions de jeu.</p>
+      <a href="https://www.amazon.fr/dp/B0CV3HM4PT?tag=googshopfr-21" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      style="display:inline-block; margin-top:10px; padding:8px 12px; background:#0f73ff; color:white; text-decoration:none; border-radius:4px;">
+     Acheter sur Amazon
+     </a>
+    </div>
+    <div class="equip-item chaise">
+      <img src="https://m.media-amazon.com/images/I/81urj6ge5IL._AC_SL1500_.jpg" />
+      <h3>Dowinx Chaise Gaming </h3>
+      <p>Chaise gaming robuste avec appui-tête et soutien lombaire vibrants, accoudoirs 4D réglables, dossier inclinable jusqu’à 170° et repose-pieds rétractable. Revêtement en cuir PU ou tissu respirant avec mousse haute densité renforcée par des ressorts ensachés pour un confort durable.</p>
+      <a href="https://www.amazon.fr/Dowinx-Ergonomique-Confortable-Repose-Pieds-R%C3%A9tractable/dp/B0BKSMG1FF/ref=sr_1_7?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=3R1ETU5DMMU5&dib=eyJ2IjoiMSJ9.Oa0aE-iwAcxlJP7BDDwd22YmHryXH1FnNGJP0E0Ik0CrGszCmocSn_I_bp3V3z54j83Ysqj7t795pd4D1c55JEJ_O_S0fefRwfJRdQ9EZWdIbb4SeSfk-smR5fpgS7Q8e2zzoT215nH3imqm5mkHTDsojpEVv1Yv_FRZv4VMyD6UjfvlFiS8cKtCYsIOWG1mY_wUIfUR6ne6_JptLjLd2f6Inqhy32Zy0zsPmuydWEz_ktThTAQdqFGg9oK6ttm3gILEJLqxK1MqxkG7Ez5BsqAacUbMDUZ4Q9xrpGRL1Dc.Dal80rhbb1EOIUwITCRch6qA_nY8MglzT3kRNFYUuS0&dib_tag=se&keywords=chaise%2Bgaming&qid=1753443059&sprefix=chaise%2Bgaming%2Caps%2C159&sr=8-7&th=1" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      style="display:inline-block; margin-top:10px; padding:8px 12px; background:#0f73ff; color:white; text-decoration:none; border-radius:4px;">
+     Acheter sur Amazon
+     </a>
+    </div>
+    <div class="equip-item chaise">
+      <img src="https://m.media-amazon.com/images/I/71gRiPRvM9L._AC_SL1500_.jpg" />
+      <h3>Play Haha, Chaise de Jeu  </h3>
+      <p>Chaise gaming à petit prix avec assise généreuse (52×48 cm), dossier inclinable jusqu'à 135°, appui-tête et soutien lombaire intégrés, ainsi qu’un repose-pieds rétractable. Revêtement en simili‑cuir et maille respirante, accoudoirs rembourrés, base pivotante 360° et capacité de charge jusqu’à 150 kg.</p>
+      <a href="https://www.amazon.fr/Play-Haha-Chaise-Pivotante-Ergonomique/dp/B0C4HK7BGF/ref=sr_1_4_sspa?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=3OQ7UN428RBJ2&dib=eyJ2IjoiMSJ9.ve9V8NJgjfMs_0F5qCVm1yCEn1xzANd-jBdrtyrBr8kumnE7MpBennRYqV_O2QEcldr01_9FsdMNR3AXXYBo55WZnQ7v8Yrpj_gG8PwlHfRpeRKNtmgb1AnUCwSiJNHALK8Z3j-psZCX0MTyjbxx_sYaxEX4SejklLgZLaK4u-mYyWqR1M7l4_18HTrG8MbyxSxH9xxbjBz9Dpq-EJKe9pWmjyXs6u5LIT5WmFPNA3s5PFPWDSZm3x4e83qS4xL2o7q8MULE74X9P_6WGWgxjKu-SlWikz-y8cdoJH-_-rs.2ZhJqBIxh6YkR34aqM2kNBK0VGMqBDzSRw3xp-9z60U&dib_tag=se&keywords=Chaise%2BGamer%2BBronze%2BSeries%2BDeep%2BBlue&qid=1753443234&sprefix=chaise%2Bgamer%2Bbronze%2Bseries%2Bdeep%2Bblue%2Caps%2C126&sr=8-4-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      style="display:inline-block; margin-top:10px; padding:8px 12px; background:#0f73ff; color:white; text-decoration:none; border-radius:4px;">
+     Acheter sur Amazon
+     </a>
+    </div>
+    <div class="equip-item chaise">
+      <img src="https://m.media-amazon.com/images/I/71nihxjG6tL._AC_SL1500_.jpg" />
+      <h3>Dowinx Chaise Gaming   </h3>
+      <p>Fauteuil respirant en maille avec assise à mousses haute densité et ressorts ensachés pour un confort canapé. Inclut appui-tête, soutien lombaire massant, et repose-pieds rétractable. Réglable en hauteur, inclinaison (jusqu’à 170 °) et accoudoirs 4D. Supporte jusqu’à 150 kg.</p>
+      <a href="https://www.amazon.fr/Dowinx-Ergonomique-pivotante-r%C3%A9glable-Repose-Pieds/dp/B0BJ732YWS/ref=sr_1_43?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=3OQ7UN428RBJ2&dib=eyJ2IjoiMSJ9.ve9V8NJgjfMs_0F5qCVm1yCEn1xzANd-jBdrtyrBr8kumnE7MpBennRYqV_O2QEcldr01_9FsdMNR3AXXYBo58S3zyPSG-EGJqT8b0KyoDD399cKK-WocpcWibLTwYsFl570LQv3iFLslIWforEq98YaxEX4SejklLgZLaK4u-mYyWqR1M7l4_18HTrG8MbyxSxH9xxbjBz9Dpq-EJKe9pWmjyXs6u5LIT5WmFPNA3s5PFPWDSZm3x4e83qS4xL2o7q8MULE74X9P_6WGWgxjKu-SlWikz-y8cdoJH-_-rs.4t9Q34iNCFYsvItllzLOqJdYf9TTZjp74XpKw2pK-XM&dib_tag=se&keywords=Chaise%2BGamer%2BBronze%2BSeries%2BDeep%2BBlue&qid=1753443521&sprefix=chaise%2Bgamer%2Bbronze%2Bseries%2Bdeep%2Bblue%2Caps%2C126&sr=8-43&th=1" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      style="display:inline-block; margin-top:10px; padding:8px 12px; background:#0f73ff; color:white; text-decoration:none; border-radius:4px;">
+     Acheter sur Amazon
+     </a>
+    </div>
+
+    <div class="equip-item manchette">
+      <img src="https://m.media-amazon.com/images/I/81k2UAt93TL._AC_SX522_.jpg" />
+      <h3>NRV Manchette gaming Sakura </h3>
+      <p>Cette manchette de compression NRV est conçue spécialement pour les gamers exigeants. Inspirée du design japonais "Sakura", elle allie style, performance, et confort. Fabriquée dans un textile extensible et respirant (83 % polyester, 17 % élasthanne), elle garantit une glisse fluide sans friction entre l’avant-bras et le tapis de souris.</p>
+      <a href="https://www.amazon.fr/dp/B0D6JXHXCW??tag=googshopfr-21" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      style="display:inline-block; margin-top:10px; padding:8px 12px; background:#0f73ff; color:white; text-decoration:none; border-radius:4px;">
+     Acheter sur Amazon
+     </a>
+    </div>
+    <div class="equip-item manchette">
+      <img src="https://m.media-amazon.com/images/I/61mc5JtHITL._AC_SX522_.jpg" />
+      <h3>fuinloth Manchettes </h3>
+      <p>Manchons de compression unisexes offrant un soutien modéré, protection UV et meilleure glisse sur tapis gaming. Idéal pour le gaming, le padel, le basket ou la course grâce à un tissu fin, respirant et durable, avec un design élégant adapté aux hommes comme aux femmes.</p>
+      <a href="https://www.amazon.fr/fuinloth-Paires-Manchettes-Protection-Fluorescent/dp/B0DRB8DPN6/ref=sr_1_18_sspa?crid=3FKTH1CJ91N4C&dib=eyJ2IjoiMSJ9.RUbuu4EHxYsPE4gFUKCDYE-YZbOpRSQD7sTsauMI4sy87XCbcMLqkcO_xs4b_ELTGMKBgS1PRfGaenCExoK0XM1xb5ggQb6rZIx4KELtnDjRPqGI6AoW2tfODDMcxjC4afRBuiF2x9gKTf3ptWAq-9vEGaLw5qr29_dOa2Nob3Twglnbb8kryhYRG4-x45MiS4buIK0b-bNM_CJIyD9n1wGRCA7ZNtlnwj39vjT6hPJMZdaMcub8G9sFJ5NoYKWWhg8J5OYGD-4yl6pXD6BQ9vjBqiktetYEk8BOTRBo_SU.RGZ5JyGTdNe9LmBB-zqDsWYE1dCPq6wPovI8qL7-C2U&dib_tag=se&keywords=manchette+gaming&qid=1753443681&sprefix=Manchette+%2Caps%2C97&sr=8-18-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9tdGY&psc=1" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      style="display:inline-block; margin-top:10px; padding:8px 12px; background:#0f73ff; color:white; text-decoration:none; border-radius:4px;">
+     Acheter sur Amazon
+     </a>
+    </div>
+    <div class="equip-item manchette">
+      <img src="https://m.media-amazon.com/images/I/81-RONwoebL._AC_SX522_.jpg" />
+      <h3>Manchette Gaming eSport Dark Sakura </h3>
+      <p>Manchette de compression gamer stylée, conçue pour l’eSport. Fabriquée en tissu résistant (83 % polyester, 17 % élasthanne), elle offre un design exclusif inspiré des fleurs de cerisier, une glisse fluide sur tapis, une excellente respirabilité et une compression légère améliorant l’endurance. Disponible en plusieurs tailles (S à 3 XL), vendue à l’unité.</p>
+      <a href="https://www.amazon.fr/Manchette-Gaming-eSport-Dark-Sakura/dp/B0F937LGN9/ref=sr_1_4_sspa?crid=3FKTH1CJ91N4C&dib=eyJ2IjoiMSJ9.RUbuu4EHxYsPE4gFUKCDYE-YZbOpRSQD7sTsauMI4sy87XCbcMLqkcO_xs4b_ELTGMKBgS1PRfGaenCExoK0XM1xb5ggQb6rZIx4KELtnDjRPqGI6AoW2tfODDMcxjC4afRBuiF2x9gKTf3ptWAq-9vEGaLw5qr29_dOa2Nob3Twglnbb8kryhYRG4-x45MiS4buIK0b-bNM_CJIyD9n1wGRCA7ZNtlnwj39vjT6hPJMZdaMcub8G9sFJ5NoYKWWhg8J5OYGD-4yl6pXD6BQ9vjBqiktetYEk8BOTRBo_SU.RGZ5JyGTdNe9LmBB-zqDsWYE1dCPq6wPovI8qL7-C2U&dib_tag=se&keywords=manchette%2Bgaming&qid=1753443681&sprefix=Manchette%2B%2Caps%2C97&sr=8-4-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1&psc=1" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      style="display:inline-block; margin-top:10px; padding:8px 12px; background:#0f73ff; color:white; text-decoration:none; border-radius:4px;">
+     Acheter sur Amazon
+     </a>
+    </div>
+    <div class="equip-item manchette">
+      <img src="https://m.media-amazon.com/images/I/61+yVy3V8IL._AC_SL1500_.jpg" />
+      <h3>SHITOOMFE Gaming à Manches Bras </h3>
+      <p>Manchette de compression avec tissu respirant (polyester/élasthanne), conçue pour réduire la friction entre l’avant-bras et le bureau. Idéale pour le gaming compétitif ou les longues sessions, elle offre maintien léger, glisse fluide et confort thermique.</p>
+      <a href="https://www.amazon.fr/SHITOOMFE-Gaming-Manches-Protection-Refroidissement/dp/B0F5HKBPMN/ref=sr_1_14?crid=3FKTH1CJ91N4C&dib=eyJ2IjoiMSJ9.RUbuu4EHxYsPE4gFUKCDYE-YZbOpRSQD7sTsauMI4sy87XCbcMLqkcO_xs4b_ELTGMKBgS1PRfGaenCExoK0XM1xb5ggQb6rZIx4KELtnDjRPqGI6AoW2tfODDMcxjC4afRBuiF2x9gKTf3ptWAq-9vEGaLw5qr29_dOa2Nob3Twglnbb8kryhYRG4-x45MiS4buIK0b-bNM_CJIyD9n1wGRCA7ZNtlnwj39vjT6hPJMZdaMcub8G9sFJ5NoYKWWhg8J5OYGD-4yl6pXD6BQ9vjBqiktetYEk8BOTRBo_SU.RGZ5JyGTdNe9LmBB-zqDsWYE1dCPq6wPovI8qL7-C2U&dib_tag=se&keywords=manchette+gaming&qid=1753443681&sprefix=Manchette+%2Caps%2C97&sr=8-14" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      style="display:inline-block; margin-top:10px; padding:8px 12px; background:#0f73ff; color:white; text-decoration:none; border-radius:4px;">
+     Acheter sur Amazon
+     </a>
+    </div>
+
+     <div class="equip-item tapis">
+      <img src="https://m.media-amazon.com/images/I/41xi53MpdKL._AC_SL1500_.jpg" />
+      <h3>SteelSeries QcK Tapis de Souris Gaming</h3>
+      <p>Le QcK est le tapis de souris le plus vendu de SteelSeries, une référence incontournable pour les joueurs pro et amateurs. Il combine un tissu micro-tissé haute densité et une base en caoutchouc antidérapante, offrant une glisse fluide et une précision optimale pour toutes les souris gaming.</p>
+      <a href="https://www.amazon.fr/dp/B0CVN5MQ6P?tag=googshopfr-21" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      style="display:inline-block; margin-top:10px; padding:8px 12px; background:#0f73ff; color:white; text-decoration:none; border-radius:4px;">
+     Acheter sur Amazon
+     </a>
+    </div>
+    <div class="equip-item tapis">
+      <img src="https://m.media-amazon.com/images/I/312ZT9R3ctL._AC_SL1050_.jpg" />
+      <h3>SteelSeries Tapis de souris de jeu en tissu QcK Prism</h3>
+      <p>Tapis en tissu micro-tissé ultra-doux, optimisé pour les capteurs optiques et laser, avec base en caoutchouc antidérapante pour un maintien solide. Doté d’un éclairage RGB dynamique à 2 zones (jusqu’à 12 zones personnalisables via SteelSeries Engine), il prend également en charge les notifications en temps réel (game alerts, Discord, audio visualizer).</p>
+      <a href="https://www.amazon.fr/gp/aw/d/B07JQ2TK86/?_encoding=UTF8&pd_rd_plhdr=t&aaxitk=c25fa42a4b54b5c8ae83e132feb49336&hsa_cr_id=0&qid=1753444315&sr=1-1-e0fa1fdd-d857-4087-adda-5bd576b25987&ref_=sbx_be_s_sparkle_lsi4d_asin_0_img&pd_rd_w=gi4OC&content-id=amzn1.sym.4350b39f-25a8-43dc-a3d9-386c47c71190%3Aamzn1.sym.4350b39f-25a8-43dc-a3d9-386c47c71190&pf_rd_p=4350b39f-25a8-43dc-a3d9-386c47c71190&pf_rd_r=NSYKMSQEWYCXCNX4GXGT&pd_rd_wg=iPdYW&pd_rd_r=755c843c-c4fc-4290-a4f6-86bcebd4334e&th=1" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      style="display:inline-block; margin-top:10px; padding:8px 12px; background:#0f73ff; color:white; text-decoration:none; border-radius:4px;">
+     Acheter sur Amazon
+     </a>
+    </div>
+    <div class="equip-item tapis">
+      <img src="https://m.media-amazon.com/images/I/71kR8OYeavL._AC_SL1500_.jpg" />
+      <h3>HGWALP Large game</h3>
+      <p>Tapis étendu 80×30 cm (31,5 × 11,8 inch) conçu pour accueillir clavier, souris et accessoires : surface micro-tissée ultra douce, base en caoutchouc antidérapant robuste, bords cousus anti-effilochage.</p>
+      <a href="https://www.amazon.fr/HGWALP-Terrain-Caoutchouc-antid%C3%A9rapant-Extended/dp/B0D7VLLHPM/ref=sr_1_8?crid=28HZMQY5V8KJW&dib=eyJ2IjoiMSJ9.f3NLQzeyPcw6NhRH6jBkfdliyOX3BcsU0la9qg6NxoffIDWirscJiHB3ITyRqiA77E7kYXJv7FsQSkit3KfZyWRJUtOUjM5xkxGFRHyJD7a3akQkRWbSanMIjwv4za31CNwu7nk7UPrPwWF47VD6GdVt-yBM2kGn_iAj55Oul4J09D9XM2tRrvw_JX6wh6jh51jvo9ZoxU4IYJ_xMfAbrqBSbt8UboLvKgenWl5k5ntUuIlk7uN71aTQh7UPHPQgVt9_JSO5nNusUc20piETLAmTUeWin3U7DOuDmjYioKI.lIRuLYc9799R9_xqopkWNhKGaDRPRkN_DSy0jzOzNpA&dib_tag=se&keywords=tapis%2Bsouris%2Bgamer&qid=1753444461&sprefix=tapis%2Bsouri%2Caps%2C100&sr=8-8&th=1" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      style="display:inline-block; margin-top:10px; padding:8px 12px; background:#0f73ff; color:white; text-decoration:none; border-radius:4px;">
+     Acheter sur Amazon
+     </a>
+    </div>
+    <div class="equip-item tapis">
+      <img src="https://m.media-amazon.com/images/I/81MqBvMqsQL._AC_SL1500_.jpg" />
+      <h3>EFISH Tapis de Souris de Jeu Japonais</h3>
+      <p>Tapis XXL avec design inspiré du Japon, surface tissu micro-tissé ultra‑lisse pour des mouvements précis, base en caoutchouc antidérapant, bords cousus renforcés et surface déperlante facile à nettoyer. Optimisé pour les souris optiques ou laser pour un contrôle fluide en gaming et en bureautique.</p>
+      <a href="https://www.amazon.fr/EFISH-Imperm%C3%A9able-Antid%C3%A9rapant-Ordinateur-pr%C3%A9cision/dp/B0DXL9HF4T/ref=sxin_23_pa_sp_search_thematic_sspa?content-id=amzn1.sym.b772482c-63e4-4eb4-a1c6-4190add0a415%3Aamzn1.sym.b772482c-63e4-4eb4-a1c6-4190add0a415&crid=28HZMQY5V8KJW&cv_ct_cx=tapis%2Bsouris%2Bgamer&keywords=tapis%2Bsouris%2Bgamer&pd_rd_i=B0DXL9HF4T&pd_rd_r=5c9eaacb-782e-485d-8589-4c7854ff2275&pd_rd_w=PwzPH&pd_rd_wg=hdxEF&pf_rd_p=b772482c-63e4-4eb4-a1c6-4190add0a415&pf_rd_r=1QN1S6JSCNWE1NVKNGNA&qid=1753444461&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sprefix=tapis%2Bsouri%2Caps%2C100&sr=1-1-86ee67e3-2ea6-4725-8419-71cfe38eb657-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWM&th=1" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      style="display:inline-block; margin-top:10px; padding:8px 12px; background:#0f73ff; color:white; text-decoration:none; border-radius:4px;">
+     Acheter sur Amazon
+     </a>
+    </div>
+
+  </div>
+<footer style="text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #aaa;
+      background: #20232a;">
+    &copy; 2025 FortniteBoost.fr — Site non officiel Fortnite™
+  </footer>
+  <script>
+  // Récupérer tous les boutons de filtre et les items d'équipement
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const equipItems = document.querySelectorAll('.equip-item');
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Retirer la classe active de tous les boutons
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      // Ajouter la classe active au bouton cliqué
+      button.classList.add('active');
+
+      const filter = button.getAttribute('data-filter');
+
+      equipItems.forEach(item => {
+        // Si filtre "all", on affiche tout
+        if (filter === 'all') {
+          item.style.display = 'block';
+        } else {
+          // Sinon, on affiche que les items qui ont la classe correspondant au filtre
+          if (item.classList.contains(filter)) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        }
+      });
+    });
+  });
+
+  // Optionnel : activer par défaut le filtre "all" au chargement
+  document.querySelector('.filter-btn[data-filter="all"]').classList.add('active');
+</script>
+
+</body>
+</html>

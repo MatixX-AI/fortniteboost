@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Générateur de pseudo Fortnite Tryhard</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background: #0d0f1a;
+      color: #e1e1e1;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Bannière */
+    header {
+      background: #20232a;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      color: #61dafb;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #ccc;
+    }
+
+
+    /* Navigation */
+    nav {
+      background: #20232a;
+      text-align: center;
+      padding: 12px 0;
+    }
+
+    nav a, nav button {
+      color: #61dafb;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0 10px;
+      padding: 10px 16px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    .menu-pioches {
+      display: none;
+      position: absolute;
+      background: #20232a;
+      margin-top: 5px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      z-index: 999;
+    }
+
+    .menu-pioches a {
+      display: block;
+      padding: 10px 16px;
+      color: #0f73ff;
+      text-align: left;
+    }
+
+    /* Générateur */
+    .container {
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .container h2 {
+      color: #fff;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    button#generateBtn {
+      background: linear-gradient(45deg, #0f73ff, #1e90ff);
+      border: none;
+      padding: 15px 40px;
+      color: #0d0f1a;
+      font-weight: 700;
+      font-size: 1.2rem;
+      border-radius: 15px;
+      cursor: pointer;
+      box-shadow: 0 0 10px #0f73ff;
+      transition: all 0.3s ease;
+    }
+
+    button#generateBtn:hover {
+      background: linear-gradient(45deg, #1e90ff, #0f73ff);
+      box-shadow: 0 0 15px #1e90ff;
+    }
+
+    #generatedName {
+      margin-top: 30px;
+      font-size: 2.2rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+      color: #0f73ff;
+      cursor: pointer;
+    }
+
+    p.copy-info {
+      color: #6fb9ff;
+      margin-top: 10px;
+    }
+
+  </style>
+</head>
+<body>
+
+ <!-- Remplace ton <header> ET <nav> par ce bloc pour harmoniser avec la page d'accueil : -->
+<header style="padding: 20px; background: #20232a; box-shadow: 0 0 15px 4px #0f73ff;">
+  <div class="banner-content">
+     <img src="Images/Logo.png.png" style="width:90px; margin-bottom:10px; float:left; margin-right:20px; height:auto;">
+    <div class="banner-center">
+      <h1 class="banner-title">FortniteBoost</h1>
+      <p class="banner-subtitle">Les meilleures astuces et guides pour progresser sur Fortnite</p>
+    </div>
+  </div>
+</header>
+<nav class="banner-nav">
+  <a href="accueil.html">Accueil</a>
+  <a href="equipement.html">Équipement pro Fortnite</a>
+  <a href="map.html">Carte Fortnite</a>
+  <span class="dropdown">
+    <button onclick="toggleMenu()" aria-haspopup="true" aria-expanded="false">Top 10 ▼</button>
+    <div id="menuPioches" class="menu-pioches">
+      <a href="pioche.html">Pioches</a>
+      <a href="sac_a_dos.html">Sac à dos</a>
+      <a href="planeur.html">Planeur</a>
+      <a href="skin.html">Skin</a>
+      <a href="danse.html" style="display:block; padding:10px 18px;">Danses</a>
+    </div>
+  </span>
+  <a href="quiz.html">Quiz</a>
+  <a href="pseudo.html" style="color:#61dafb; margin: 0 15px; text-decoration:none; font-weight:bold;">Pseudo</a>
+  <a href="mention.html" class="btn" style="margin: 0 8px;">Mentions légales et confidentialité</a>
+</nav>
+<!-- Générateur -->
+  <div class="container">
+    <h2>Générateur de pseudo Fortnite Tryhard</h2>
+    <button id="generateBtn">🎮 Générer un pseudo Tryhard</button>
+    <div id="generatedName" title="Clique pour copier le pseudo">Clique sur le bouton pour un pseudo tryhard</div>
+    <p class="copy-info">Clique sur le pseudo pour le copier 📋</p>
+  </div>
+<script>
+  function toggleMenu() {
+    document.getElementById('menuPioches').classList.toggle('show');
+  }
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.dropdown')) {
+      document.getElementById('menuPioches').classList.remove('show');
+    }
+  });
+</script>
+
+<style>
+.banner-title {
+  margin: 0;
+  font-size: 2.5rem;
+  color: #61dafb;
+}
+
+.banner-nav a,
+.banner-nav button {
+  background: none;
+  border: none;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0 8px;
+  transition: color 0.2s;
+}
+.banner-nav a:hover,
+.banner-nav button:hover {
+  color: #fff;
+  text-shadow: 0 0 16px #0f73ff, 0 0 8px #61dafb;
+}
+.dropdown { position:relative; display:inline-block; }
+.menu-pioches {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background: #20232a;
+  min-width: 180px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  border-radius: 8px;
+  padding: 4px 0;
+  z-index: 200;
+  text-align: left;
+}
+.menu-pioches a {
+  display: block;
+  padding: 10px 18px;
+  font-weight: bold;
+  color: #61dafb;
+  text-decoration: none;
+}
+.menu-pioches a:hover {
+  background: #0f73ff;
+  color: #fff;
+  box-shadow: 0 0 12px 2px #0f73ff;
+  text-shadow: 0 0 8px #0f73ff;
+}
+.menu-pioches.show { display: block !important; }
+
+</style>
+
+  
+
+  <script>
+    const prefixes = [
+      'xX', 'Pro', 'Elite', 'No', 'Shadow', 'Dark', 'Ghost', 'Sniper', 'King', 'Fury', 'Dead', 'Alpha',
+      'Mega', 'Ultra', 'Viper', 'Rage', 'Silent', 'Rapid'
+    ];
+
+    const adjectives = [
+      'Killer', 'Fury', 'Rage', 'Slayer', 'Destroyer', 'Assassin', 'Reaper', 'Hunter', 'Frost', 'Venom',
+      'Blaze', 'Storm', 'Crusher', 'Doom', 'Savage', 'Razor'
+    ];
+
+    const suffixes = [
+      '69', '420', 'X', '_', 'HD', 'YT', 'Pro', 'Snipes', 'God', '9000', 'XX', 'PvP'
+    ];
+
+    function randomItem(arr) {
+      return arr[Math.floor(Math.random() * arr.length)];
+    }
+
+    function maybeSuffix() {
+      return Math.random() < 0.7 ? randomItem(suffixes) : '';
+    }
+
+    const generateBtn = document.getElementById('generateBtn');
+    const generatedName = document.getElementById('generatedName');
+
+    generateBtn.addEventListener('click', () => {
+      const prefix = randomItem(prefixes);
+      const adj = randomItem(adjectives);
+      const suffix = maybeSuffix();
+      const sep = suffix && !suffix.startsWith('_') ? '' : '_';
+      const name = `${prefix}${sep}${adj}${suffix}`;
+      generatedName.textContent = name;
+    });
+
+    generatedName.addEventListener('click', () => {
+      const text = generatedName.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        alert(`Pseudo \"${text}\" copié dans le presse-papiers !`);
+      });
+    });
+  </script>
+  <footer style="text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #aaa;
+      background: #20232a;">
+    &copy; 2025 FortniteBoost.fr — Site non officiel Fortnite™
+  </footer>
+  <script>
+  const btnPioches = document.querySelector('nav button');
+  const menuPioches = document.querySelector('.menu-pioches');
+
+  if (btnPioches && menuPioches) {
+    let isHovered = false;
+
+    btnPioches.addEventListener('mouseenter', () => {
+      isHovered = true;
+      menuPioches.style.display = 'block';
+    });
+
+    btnPioches.addEventListener('mouseleave', () => {
+      setTimeout(() => {
+        if (!isHovered) menuPioches.style.display = 'none';
+      }, 150);
+    });
+
+    menuPioches.addEventListener('mouseenter', () => {
+      isHovered = true;
+      menuPioches.style.display = 'block';
+    });
+
+    menuPioches.addEventListener('mouseleave', () => {
+      isHovered = false;
+      menuPioches.style.display = 'none';
+    });
+
+    // Toggle menu on click (mobile)
+    btnPioches.addEventListener('click', () => {
+      const isVisible = menuPioches.style.display === 'block';
+      menuPioches.style.display = isVisible ? 'none' : 'block';
+    });
+  }
+</script>
+
+
+</body>
+</html>
